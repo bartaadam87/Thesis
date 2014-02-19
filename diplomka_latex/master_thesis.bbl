@@ -1,0 +1,358 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 2.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \sortlist{entry}{nty}
+    \entry{alchemy}{online}{}
+      \name{labelname}{1}{}{%
+        {{uniquename=0,hash=b42a6152fdcc6004b832a763f2c9bc06}{{AlchemyAPI,\bibnamedelimb Inc.}}{A\bibinitperiod}{}{}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{uniquename=0,hash=b42a6152fdcc6004b832a763f2c9bc06}{{AlchemyAPI,\bibnamedelimb Inc.}}{A\bibinitperiod}{}{}{}{}{}{}}%
+      }
+      \strng{namehash}{b42a6152fdcc6004b832a763f2c9bc06}
+      \strng{fullhash}{b42a6152fdcc6004b832a763f2c9bc06}
+      \field{sortinit}{A}
+      \field{labelyear}{2013}
+      \field{labeltitle}{AlchemyAPI}
+      \field{title}{AlchemyAPI}
+      \field{year}{2013}
+      \verb{url}
+      \verb www.alchemyapi.com
+      \endverb
+    \endentry
+    \entry{nltk}{book}{}
+      \name{labelname}{3}{}{%
+        {{uniquename=0,hash=a6ad72a87713a430f7335c5656da28f1}{Bird}{B\bibinitperiod}{Steven}{S\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=95e002ca584c2d8d701c96f08c6d589f}{Klein}{K\bibinitperiod}{Ewan}{E\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=2814798d9a65d66800fc6e2ec5ad7483}{Loper}{L\bibinitperiod}{Edward}{E\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{3}{}{%
+        {{uniquename=0,hash=a6ad72a87713a430f7335c5656da28f1}{Bird}{B\bibinitperiod}{Steven}{S\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=95e002ca584c2d8d701c96f08c6d589f}{Klein}{K\bibinitperiod}{Ewan}{E\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=2814798d9a65d66800fc6e2ec5ad7483}{Loper}{L\bibinitperiod}{Edward}{E\bibinitperiod}{}{}{}{}}%
+      }
+      \list{publisher}{1}{%
+        {O'Reilly Media, Inc.}%
+      }
+      \strng{namehash}{f0999d1f539a44b08b01482038a721f8}
+      \strng{fullhash}{f0999d1f539a44b08b01482038a721f8}
+      \field{sortinit}{B}
+      \field{labelyear}{2009}
+      \field{labeltitle}{Natural Language Processing with Python}
+      \field{edition}{1st}
+      \field{isbn}{0596516495, 9780596516499}
+      \field{title}{Natural Language Processing with Python}
+      \field{year}{2009}
+    \endentry
+    \entry{linkeddata}{article}{}
+      \name{labelname}{3}{}{%
+        {{uniquename=0,hash=c0ab52e226557a243a4a5277aec8acdc}{Bizer}{B\bibinitperiod}{Christian}{C\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=c040f12898283360a9825ed80f52e777}{Heath}{H\bibinitperiod}{Tom}{T\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=d469e0df304c98f67b55d087ea6187a1}{Berners-Lee}{B\bibinithyphendelim L\bibinitperiod}{Tim}{T\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{3}{}{%
+        {{uniquename=0,hash=c0ab52e226557a243a4a5277aec8acdc}{Bizer}{B\bibinitperiod}{Christian}{C\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=c040f12898283360a9825ed80f52e777}{Heath}{H\bibinitperiod}{Tom}{T\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=d469e0df304c98f67b55d087ea6187a1}{Berners-Lee}{B\bibinithyphendelim L\bibinitperiod}{Tim}{T\bibinitperiod}{}{}{}{}}%
+      }
+      \name{editor}{3}{}{%
+        {{hash=3b128724a9036379851536be8a5e3b23}{Heath}{H\bibinitperiod}{T.}{T\bibinitperiod}{}{}{}{}}%
+        {{hash=96b618461cadc2a52f76cb088c74626c}{Hepp}{H\bibinitperiod}{M.}{M\bibinitperiod}{}{}{}{}}%
+        {{hash=c9f2260615ad9fb168300211e64ffc54}{Bizer}{B\bibinitperiod}{C.}{C\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{119c89bf63ca82bd819dbc4a7a4326c7}
+      \strng{fullhash}{119c89bf63ca82bd819dbc4a7a4326c7}
+      \field{sortinit}{B}
+      \field{labelyear}{2009}
+      \field{labelmonth}{03}
+      \field{labeltitle}{Linked Data - The Story So Far}
+      \field{abstract}{The term Linked Data refers to a set of best practices for publishing and connecting structured data on the Web. These best practices have been adopted by an increasing number of data providers over the last three years, leading to the creation of a global data space containing billions of assertions - the Web of Data. In this article we present the concept and technical principles of Linked Data, and situate these within the broader context of related technological developments. We describe progress to date in publishing Linked Data on the Web, review applications that have been developed to exploit the Web of Data, and map out a research agenda for the Linked Data community as it moves forward.}
+      \field{issn}{1552-6283}
+      \field{journaltitle}{International Journal on Semantic Web and Information Systems (IJSWIS)}
+      \field{month}{03}
+      \field{number}{3}
+      \field{title}{Linked Data - The Story So Far}
+      \field{volume}{5}
+      \field{year}{2009}
+      \field{pages}{1\bibrangedash 22}
+      \verb{doi}
+      \verb 10.4018/jswis.2009081901
+      \endverb
+      \verb{url}
+      \verb http://dx.doi.org/10.4018/jswis.2009081901
+      \endverb
+      \keyw{linkeddata}
+    \endentry
+    \entry{dbpedia}{article}{}
+      \name{labelname}{7}{uniquelist=2}{%
+        {{uniquename=0,hash=c0ab52e226557a243a4a5277aec8acdc}{Bizer}{B\bibinitperiod}{Christian}{C\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=045d4294ee6b6936c99d278b857478b4}{Lehmann}{L\bibinitperiod}{Jens}{J\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=bac6a69c5666c5048bbc9cad7c95fe56}{Kobilarov}{K\bibinitperiod}{Georgi}{G\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=74de32830575f67e1479f58f47d2111d}{Auer}{A\bibinitperiod}{Sören}{S\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=e64d357dccbf270f516a9a4a2b193599}{Becker}{B\bibinitperiod}{Christian}{C\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=ff065518eacac535eec041c322c21896}{Cyganiak}{C\bibinitperiod}{Richard}{R\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=aaa7f45375892594264f2815449fc349}{Hellmann}{H\bibinitperiod}{Sebastian}{S\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{7}{uniquelist=2}{%
+        {{uniquename=0,hash=c0ab52e226557a243a4a5277aec8acdc}{Bizer}{B\bibinitperiod}{Christian}{C\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=045d4294ee6b6936c99d278b857478b4}{Lehmann}{L\bibinitperiod}{Jens}{J\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=bac6a69c5666c5048bbc9cad7c95fe56}{Kobilarov}{K\bibinitperiod}{Georgi}{G\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=74de32830575f67e1479f58f47d2111d}{Auer}{A\bibinitperiod}{Sören}{S\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=e64d357dccbf270f516a9a4a2b193599}{Becker}{B\bibinitperiod}{Christian}{C\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=ff065518eacac535eec041c322c21896}{Cyganiak}{C\bibinitperiod}{Richard}{R\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=aaa7f45375892594264f2815449fc349}{Hellmann}{H\bibinitperiod}{Sebastian}{S\bibinitperiod}{}{}{}{}}%
+      }
+      \list{location}{1}{%
+        {Amsterdam, The Netherlands}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier Science Publishers B. V.}%
+      }
+      \strng{namehash}{7fb127f0b260132f8469ce56b9548d75}
+      \strng{fullhash}{b898b9c68d70c596c3296c9c09dd3629}
+      \field{sortinit}{B}
+      \field{labelyear}{2009}
+      \field{labelmonth}{09}
+      \field{labeltitle}{{DBpedia -- A crystallization point for the Web of Data}}
+      \field{abstract}{{The DBpedia project is a community effort to extract structured information from Wikipedia and to make this information accessible on the Web. The resulting DBpedia knowledge base currently describes over 2.6 million entities. For each of these entities, DBpedia defines a globally unique identifier that can be dereferenced over the Web into a rich RDF description of the entity, including human-readable definitions in 30 languages, relationships to other resources, classifications in four concept hierarchies, various facts as well as data-level links to other Web data sources describing the entity. Over the last year, an increasing number of data publishers have begun to set data-level links to DBpedia resources, making DBpedia a central interlinking hub for the emerging Web of Data. Currently, the Web of interlinked data sources around DBpedia provides approximately 4.7 billion pieces of information and covers domains such as geographic information, people, companies, films, music, genes, drugs, books, and scientific publications. This article describes the extraction of the DBpedia knowledge base, the current status of interlinking DBpedia with other data sources on the Web, and gives an overview of applications that facilitate the Web of Data around DBpedia.}}
+      \field{issn}{1570-8268}
+      \field{journaltitle}{Journal of Web Semantics: Science, Services and Agents on the World Wide Web}
+      \field{month}{09}
+      \field{title}{{DBpedia -- A crystallization point for the Web of Data}}
+      \field{volume}{7}
+      \field{year}{2009}
+      \field{pages}{154\bibrangedash 165}
+      \verb{url}
+      \verb http://portal.acm.org/citation.cfm?id=1640848
+      \endverb
+      \keyw{dbpedia}
+    \endentry
+    \entry{blei_lda}{article}{}
+      \name{labelname}{3}{}{%
+        {{uniquename=0,hash=7441e4d372e854fc6d24d0d5a16a1687}{Blei}{B\bibinitperiod}{David\bibnamedelima M.}{D\bibinitperiod\bibinitdelim M\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=66b1ab24d7f42d468388f6200a7b5967}{Ng}{N\bibinitperiod}{Andrew\bibnamedelima Y.}{A\bibinitperiod\bibinitdelim Y\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=f70df67fe1d13567b704ad143006af68}{Jordan}{J\bibinitperiod}{Michael\bibnamedelima I.}{M\bibinitperiod\bibinitdelim I\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{3}{}{%
+        {{uniquename=0,hash=7441e4d372e854fc6d24d0d5a16a1687}{Blei}{B\bibinitperiod}{David\bibnamedelima M.}{D\bibinitperiod\bibinitdelim M\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=66b1ab24d7f42d468388f6200a7b5967}{Ng}{N\bibinitperiod}{Andrew\bibnamedelima Y.}{A\bibinitperiod\bibinitdelim Y\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=f70df67fe1d13567b704ad143006af68}{Jordan}{J\bibinitperiod}{Michael\bibnamedelima I.}{M\bibinitperiod\bibinitdelim I\bibinitperiod}{}{}{}{}}%
+      }
+      \list{location}{1}{%
+        {Cambridge, MA, USA}%
+      }
+      \list{publisher}{1}{%
+        {JMLR.org}%
+      }
+      \strng{namehash}{4380e0bd111e490f1620d90dfed3c0bb}
+      \strng{fullhash}{4380e0bd111e490f1620d90dfed3c0bb}
+      \field{sortinit}{B}
+      \field{labelyear}{2003}
+      \field{labelmonth}{03}
+      \field{labeltitle}{Latent dirichlet allocation}
+      \field{abstract}{We describe latent Dirichlet allocation ({LDA}), a generative probabilistic model for collections of discrete data such as text corpora. {LDA} is a three-level hierarchical Bayesian model, in which each item of a collection is modeled as a finite mixture over an underlying set of topics. Each topic is, in turn, modeled as an infinite mixture over an underlying set of topic probabilities. In the context of text modeling, the topic probabilities provide an explicit representation of a document. We present efficient approximate inference techniques based on variational methods and an {EM} algorithm for empirical Bayes parameter estimation. We report results in document modeling, text classification, and collaborative filtering, comparing to a mixture of unigrams model and the probabilistic {LSI} model.}
+      \field{issn}{1532-4435}
+      \field{journaltitle}{Journal of Machine Learning Research}
+      \field{month}{03}
+      \field{title}{Latent dirichlet allocation}
+      \field{volume}{3}
+      \field{year}{2003}
+      \field{pages}{993\bibrangedash 1022}
+      \verb{url}
+      \verb http://portal.acm.org/citation.cfm?id=944919.944937
+      \endverb
+      \keyw{allocation,dirichlet,latent}
+    \endentry
+    \entry{dbpedia_about}{online}{}
+      \name{labelname}{1}{}{%
+        {{uniquename=0,hash=a4284fd6bc3c658e1b892b871bf7010b}{Sahnwaldt}{S\bibinitperiod}{Christopher}{C\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{uniquename=0,hash=a4284fd6bc3c658e1b892b871bf7010b}{Sahnwaldt}{S\bibinitperiod}{Christopher}{C\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{a4284fd6bc3c658e1b892b871bf7010b}
+      \strng{fullhash}{a4284fd6bc3c658e1b892b871bf7010b}
+      \field{sortinit}{D}
+      \field{labelyear}{2013}
+      \field{labelmonth}{09}
+      \field{labeltitle}{DBpedia -- About}
+      \field{month}{09}
+      \field{title}{DBpedia -- About}
+      \field{year}{2013}
+      \verb{url}
+      \verb http://dbpedia.org/About
+      \endverb
+    \endentry
+    \entry{stanford_ner}{inproceedings}{}
+      \name{labelname}{3}{}{%
+        {{uniquename=0,hash=4de26fb3b3f2f480bc1eafd9e4d3c78a}{Finkel}{F\bibinitperiod}{Jenny\bibnamedelima Rose}{J\bibinitperiod\bibinitdelim R\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=978fa1abbba10679dc3d70d791eb1b43}{Grenager}{G\bibinitperiod}{Trond}{T\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=ff4377244c68b8beb3253e53d6387f94}{Manning}{M\bibinitperiod}{Christopher}{C\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{3}{}{%
+        {{uniquename=0,hash=4de26fb3b3f2f480bc1eafd9e4d3c78a}{Finkel}{F\bibinitperiod}{Jenny\bibnamedelima Rose}{J\bibinitperiod\bibinitdelim R\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=978fa1abbba10679dc3d70d791eb1b43}{Grenager}{G\bibinitperiod}{Trond}{T\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=ff4377244c68b8beb3253e53d6387f94}{Manning}{M\bibinitperiod}{Christopher}{C\bibinitperiod}{}{}{}{}}%
+      }
+      \list{location}{1}{%
+        {Ann Arbor, Michigan}%
+      }
+      \list{publisher}{1}{%
+        {Association for Computational Linguistics}%
+      }
+      \strng{namehash}{f1e5295006f0d4967b64bd099d44df81}
+      \strng{fullhash}{f1e5295006f0d4967b64bd099d44df81}
+      \field{sortinit}{F}
+      \field{labelyear}{2005}
+      \field{labelmonth}{06}
+      \field{labeltitle}{Incorporating Non-local Information into Information Extraction Systems by Gibbs Sampling}
+      \field{booktitle}{Proceedings of the 43rd Annual Meeting of the Association for Computational Linguistics (ACL'05)}
+      \field{month}{06}
+      \field{title}{Incorporating Non-local Information into Information Extraction Systems by Gibbs Sampling}
+      \field{year}{2005}
+      \field{pages}{363\bibrangedash 370}
+      \verb{url}
+      \verb http://www.aclweb.org/anthology/P/P05/P05-1045
+      \endverb
+    \endentry
+    \entry{linkingopendata}{online}{}
+      \name{labelname}{1}{}{%
+        {{uniquename=0,hash=d8b48ca5f7a365aa9bf03d0c1f93a902}{{W3C\bibnamedelimb SWEO\bibnamedelimb Community\bibnamedelimb Project}}{W\bibinitperiod}{}{}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{uniquename=0,hash=d8b48ca5f7a365aa9bf03d0c1f93a902}{{W3C\bibnamedelimb SWEO\bibnamedelimb Community\bibnamedelimb Project}}{W\bibinitperiod}{}{}{}{}{}{}}%
+      }
+      \strng{namehash}{d8b48ca5f7a365aa9bf03d0c1f93a902}
+      \strng{fullhash}{d8b48ca5f7a365aa9bf03d0c1f93a902}
+      \field{sortinit}{L}
+      \field{labelyear}{2013}
+      \field{labeltitle}{Linking Open Data}
+      \field{title}{Linking Open Data}
+      \field{year}{2013}
+      \verb{url}
+      \verb http://www.w3.org/wiki/SweoIG/TaskForces/CommunityProjects/LinkingOpenData
+      \endverb
+    \endentry
+    \entry{market_study_NER}{article}{}
+      \name{labelname}{1}{}{%
+        {{uniquename=0,hash=15dbe74949f4cc0ec50024c6c61b9d8d}{Olensky}{O\bibinitperiod}{Marlies}{M\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{uniquename=0,hash=15dbe74949f4cc0ec50024c6c61b9d8d}{Olensky}{O\bibinitperiod}{Marlies}{M\bibinitperiod}{}{}{}{}}%
+      }
+      \list{publisher}{1}{%
+        {Humboldt-Universität zu Berlin}%
+      }
+      \strng{namehash}{15dbe74949f4cc0ec50024c6c61b9d8d}
+      \strng{fullhash}{15dbe74949f4cc0ec50024c6c61b9d8d}
+      \field{sortinit}{O}
+      \field{labelyear}{2012}
+      \field{labelmonth}{04}
+      \field{labeltitle}{Market study on technical options for semantic feature extraction}
+      \field{month}{04}
+      \field{note}{\url{http://ec.europa.eu/information_society/apps/projects/logos//2/270902/080/deliverables/001_DeliverableD74MarketStudyToolsSemExtracfinal2.pdf}}
+      \field{title}{Market study on technical options for semantic feature extraction}
+      \field{year}{2012}
+    \endentry
+    \entry{opencalais}{online}{}
+      \name{labelname}{1}{}{%
+        {{uniquename=0,hash=fb4d602da746a922388e88536ed74f86}{{Thomson\bibnamedelimb Reuters\bibnamedelimb Corporation}}{T\bibinitperiod}{}{}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{uniquename=0,hash=fb4d602da746a922388e88536ed74f86}{{Thomson\bibnamedelimb Reuters\bibnamedelimb Corporation}}{T\bibinitperiod}{}{}{}{}{}{}}%
+      }
+      \strng{namehash}{fb4d602da746a922388e88536ed74f86}
+      \strng{fullhash}{fb4d602da746a922388e88536ed74f86}
+      \field{sortinit}{O}
+      \field{labelyear}{2013}
+      \field{labeltitle}{OpenCalais}
+      \field{title}{OpenCalais}
+      \field{year}{2013}
+      \verb{url}
+      \verb http://www.opencalais.com
+      \endverb
+    \endentry
+    \entry{illinois_ner}{inproceedings}{}
+      \name{labelname}{2}{}{%
+        {{uniquename=0,hash=9313359d9a0d2ab957fc53a3f0222464}{Ratinov}{R\bibinitperiod}{Lev}{L\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=71dbeb61d23cc95a9613d414856523fe}{Roth}{R\bibinitperiod}{Dan}{D\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{2}{}{%
+        {{uniquename=0,hash=9313359d9a0d2ab957fc53a3f0222464}{Ratinov}{R\bibinitperiod}{Lev}{L\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=71dbeb61d23cc95a9613d414856523fe}{Roth}{R\bibinitperiod}{Dan}{D\bibinitperiod}{}{}{}{}}%
+      }
+      \list{location}{1}{%
+        {Stroudsburg, PA, USA}%
+      }
+      \list{publisher}{1}{%
+        {Association for Computational Linguistics}%
+      }
+      \strng{namehash}{e20454557c8e3f61091392b1a15e7fe8}
+      \strng{fullhash}{e20454557c8e3f61091392b1a15e7fe8}
+      \field{sortinit}{R}
+      \field{labelyear}{2009}
+      \field{labeltitle}{Design challenges and misconceptions in named entity recognition}
+      \field{booktitle}{Proceedings of the Thirteenth Conference on Computational Natural Language Learning}
+      \field{isbn}{978-1-932432-29-9}
+      \field{series}{CoNLL '09}
+      \field{title}{Design challenges and misconceptions in named entity recognition}
+      \field{year}{2009}
+      \field{pages}{147\bibrangedash 155}
+      \verb{url}
+      \verb http://dl.acm.org/citation.cfm?id=1596374.1596399
+      \endverb
+    \endentry
+    \entry{gensim}{inproceedings}{}
+      \name{labelname}{2}{}{%
+        {{uniquename=0,hash=b18678c3d1080b2d17429891ff481948}{Řehůřek}{Ř\bibinitperiod}{Radim}{R\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=6279e9bacedcff3b6605bcd9faaaf41c}{Sojka}{S\bibinitperiod}{Petr}{P\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{2}{}{%
+        {{uniquename=0,hash=b18678c3d1080b2d17429891ff481948}{Řehůřek}{Ř\bibinitperiod}{Radim}{R\bibinitperiod}{}{}{}{}}%
+        {{uniquename=0,hash=6279e9bacedcff3b6605bcd9faaaf41c}{Sojka}{S\bibinitperiod}{Petr}{P\bibinitperiod}{}{}{}{}}%
+      }
+      \list{language}{1}{%
+        {English}%
+      }
+      \list{location}{1}{%
+        {Valletta, Malta}%
+      }
+      \list{publisher}{1}{%
+        {ELRA}%
+      }
+      \strng{namehash}{0c7724ed4f55cbb86419c913d469aa5c}
+      \strng{fullhash}{0c7724ed4f55cbb86419c913d469aa5c}
+      \field{sortinit}{Ř}
+      \field{labelyear}{2010}
+      \field{labelmonth}{05}
+      \field{labelday}{22}
+      \field{labeltitle}{{Software Framework for Topic Modelling with Large Corpora}}
+      \field{booktitle}{{Proceedings of the LREC 2010 Workshop on New Challenges for NLP Frameworks}}
+      \field{day}{22}
+      \field{month}{05}
+      \field{note}{\url{http://is.muni.cz/publication/884893/en}}
+      \field{title}{{Software Framework for Topic Modelling with Large Corpora}}
+      \field{year}{2010}
+      \field{pages}{45\bibrangedash 50}
+    \endentry
+  \endsortlist
+\endrefsection
+\endinput
+

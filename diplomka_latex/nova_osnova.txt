@@ -1,0 +1,35 @@
+1	Úvod
+1
+2	Seskupování zpráv popisujících stejnou událost
+4-6	- popis cíle práce
+	- aktuální přístupy řešící tento problém a SW, který je využívá + jeho úspěšnost
+
+3	Využitelné nástroje a techniky
+4-5	- NER
+	- Knowledge base (Linked data)
+	- Alchemy API a další podobné nástroje
+	- Distributivní sémantika a Gensim
+
+4	Vstupní data a jejich předzpracování
+2-3	- charakteristika vstupních dat
+	- získávání dat
+	- předzpracování dat
+		* Boilerpipe a spol
+	- dodatečná zpracování potřebná při využití distributivní sémantiky
+		* tokenizace, lemmatizace, případné odfiltrování stopwords
+
+5	Pokusy s distributivní sémantikou
+3-4	- úskalí
+
+6	Vlastní přístup k řešení problému
+7-10	- analýza -> návrh -> implementace
+	- zvolené nástroje
+	- způsob využití výstupů těchto nástrojů k získání výsledků
+	- vlastnosti navrženého systému
+
+7	Vyhodnocení systému
+2-3
+8	Závěr
+1-2	- zhodnocení a možnosti rozšíření
+
+24-35

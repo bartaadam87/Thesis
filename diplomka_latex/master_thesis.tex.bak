@@ -1,0 +1,111 @@
+\documentclass[11pt,draft,oneside]{fithesis}
+\usepackage[T1]{fontenc}
+\usepackage[czech]{babel}
+\usepackage[plainpages=false, pdfpagelabels, unicode]{hyperref}
+%\usepackage{breakurl}
+\thesistitle{Automatické seskupování zpravodajských èlánkù týkajících se stejné události}
+\thesissubtitle{Diplomová práce}
+\thesisstudent{Jiøí Vejvoda}
+\thesiswoman{false}
+\thesisfaculty{fi}
+\thesisyear{podzim 2013}
+\thesislang{cs}
+\thesisadvisor{doc. RNDr. Petr Sojka, PhD.}
+
+\begin{document}
+\FrontMatter
+\ThesisTitlePage
+
+\begin{ThesisDeclaration}
+\DeclarationText
+\AdvisorName
+\end{ThesisDeclaration}
+
+\begin{ThesisThanks}
+Zde bude uvedeno \uv{podìkování} ... 
+\end{ThesisThanks}
+
+Obdobnì jako podìkování se mohou vysadit shrnutí a klíèová 
+slova pomocí prostøedí Thesisacti a ThesisKeyWordsi.
+
+\MainMatter
+\tableofcontents
+\chapter*{Úvod} % pøedpokládaný rozsah 1 normostrana
+Text ...
+
+\chapter{Uvedení do problematiky} % pøedpokládaný rozsah 1-2 normostrany
+
+\chapter{Pou¾ité nástroje} % predpokladany rozsah 6-8 normostran
+\section{Klasické NER nástroje}
+Pro systém jsem se rozhodl vyu¾ít pøedev¹ím nástroje pro rozpoznávání pojmenovaných entit (\emph{NER}\footnote{Named Entity Recognition}). 
+Ty toti¾ logicky nejvíce odhalují souvislosti mezi jednotlivými zpravodajskými èlánky. Výhoda pojmenovaných entit je také v tom, 
+¾e nejsou tolik jazykovì zatí¾ené jako ostatní slova v~textu èlánku a systém by ve výsledku mohl fungovat na èláncích v~rùzných 
+jazycích, to je ov¹em podmínìno také tím, ¾e musí být pro v¹echny jazyky podpora ve zvoleném NER nástroji. 
+
+Samotných NER nástrojù je vìt¹í mno¾ství, co se zpracování anglièitny týèe, urèitì za zmínku stojí Stanford Named Entity Recognizer~\cite{stanford_ner}, 
+dále pak Illinois Named Entity Tagger~\cite{illinois_ner}, pøípadnì je¹tì modul dostupný z~NLTK knihovny~\cite{nltk} pro NLP v~Pythonu.
+
+V¹echny jmenované nástroje mají tu výhodu, ¾e je mo¾né je nainstalovat a vyu¾ívat ve specifickém programu relativnì jednodu¹¹e, zaji¹tìní podpory pro 
+dal¹í jazyk je vìt¹inou mo¾né vytvoøením dostateènì velkého oznaèkovaného korpusu a~nauèením modelu pomocí tohoto korpusu. Nehrozí, ¾e by nástroj 
+bìhem pár let pøíli¹ zestárl a~celková efektivita programu, kde je vyu¾íván, by rapidnì klesla. Tyto nástroje jsou ov¹em urèené pøedev¹ím na vyznaèení 
+daných entit v~textu, samotný text a druh entity neøíká nic o tom, co daná entita zastupuje, je potøeba dodateèné zpracování u¾ jen k~urèení, které 
+entity v~jednom textu oznaèují stejnou vìc, toto zpracování je netriviální u¾ kvùli pou¾ívání ruzných zkratek pro názvy organizací, míst (New York, NY, N. Y.), 
+rùzné skloòování jmen, pøípadnì ne/uvádìní køestních a prostøedních jmen, opìt jejich zkracování a pod. 
+
+\section{NER nástroje s desambiguací entit}
+Tyto problémy se sna¾í øe¹it modernìj¹í nástroje, které jsou propojené s~rùznými znalostními bázemi. Mezi takové nástroje patøí napøíklad 
+AlchemyAPI~\cite{alchemy} od AlchemyAPI, Inc. a~OpenCalais od Thomson Reuters. Vytváøení a~vyu¾ívání znalostních bází je smìr, jakým se aktuálnì 
+orientuje hodnì aplikací zabývajících se NLP\footnote{Tento trend je mo¾né pozorovat i~u~napojení Googlem vytvoøeného Knowledge Graph na jeho vyhledávaè 
+v~roce 2012}, jedná se o~dal¹í krok k~analýze sémantické roviny jazyka. Napojení na takovéto znalostní báze má hlavní výhodu v~tom, ¾e je mo¾né 
+pojmenované entity desambiguovat (s~urèitou pravdìpodobností), pokud je pojmenovaná entita nalezena v databázi, uvede nástroj odkaz na tento 
+záznam (URI), který u¾ je v~rámci databáze jedineèný. Samozøejmì se mù¾e stát, ¾e nìkteré oznaèené entity se nepodaøí propojit se záznamy v~databázích 
+a» u¾ proto, ¾e pravdìpodobnost vy¹la pøíli¹ malá, nebo záznam v~databázi chybí.
+
+\subsection{Znalostní báze}
+Rozsah znalostních bází neustále roste a~samotné databáze se li¹í svým zamìøením, a» u¾ tématickým nebo lokálním/globálním a samozøejmì rozsahem. Dal¹ím specifikem je, 
+jak rychle údaje v~databázi stárnou, pro na¹e úèely budou nejdùle¾itìj¹í databáze s~geografickými názvy, známými osobnostmi, spoleènostmi a~údálostmi. 
+Geografická data netrpí tolik zmínìným stárnutím, kde¾to mezi známé osobnosti a~spoleènosti pøibývají èasto zmiòované entity velmi rychle a~èasto se tomu tak 
+dìje právì na základì událostí, které popisují aktuální zpravodajské èlánky, které má tento projekt za cíl zpracovávat. 
+Je tu tedy kladen velký dùraz na aktuálnost dat ve znalostní bázi, pøesnìji je nutné aby existovaly záznamy o~entitách, které vznikly nebo se staly 
+známými a¾ v~poslední dobì. Znalostní báze je tedy nejlep¹í vyu¾ívat pøímo online s~nejaktuálnìj¹ími záznamy.
+
+Základní stavební jednotkou dat uvnitø databází jsou RDF\footnote{Resource Description Framework} trojice, ty reprezentují v¾dy vztah dvou entit a~celou 
+databázi je pak mo¾né si nejjednodu¹¹eji pøedstavit jako orientovaný graf. Definice tìchto trojic má spí¹e abstraktní formu, ka¾dá databáze pou¾ívá 
+svou vlastní implementaci, je v¹ak pøesnì nadefinována jejich serializace a~díky tomu je mo¾né propojovat RDF trojice mezi rùznými databázemi. 
+
+Mezi hlavní znalostní báze patøí DBpedia vyvíjená Lipskou univerzitou a~Svobodnou univerzitou Berlín, první verze byla vydána na zaèátku roku 2007. Databáze 
+je vytváøena ze stránek Wikipedia.org, pou¾ívá se automatická extrakce strukturovaných dat pøedev¹ím z~tabulek se základními informacemi. Stejnì jako 
+klasická wikipedia je i~DBpedia vícejazyková, anglická verze pokrývá 3,77 milionu vìcí, z toho 2,35 milionu je zaøazeno do ontologie, celkovì 
+DBpedia sestává z~10,3 milionù vìcí ve 111 rùzných jazycích. DBpedia obsahuje 1,89 miliardy RDF trojic a je tak nejvìt¹í volnì dostupnou znalostní bází.
+
+Dal¹í rozsáhlá volnì dostupné znalostní báze je Freebase zalo¾ená roku 2007 spoleèností Metaweb\footnote{V roce 2010 koupena spoleèností Google, která Freebase 
+pou¾ila jako jeden ze základních prvkù pøi tvorbì svého Knowledge Graph.}, ta je na rozdíl od DBpedie nejen automaticky vyextrahovaná z~wikipedie, 
+vyu¾ívá automatickou extrakci i~z~dal¹ích zdrojù a~hlavnì je èást jejích dat pøímo ruènì vytvoøena u¾ivateli. Freebase obsahuje témìø 40 milionù 
+vìcí a~pøes 337 milionù RDF trojic.
+
+\subsection{Linked Data}
+Velké mno¾ství ruzných znalostních bází pøineslo potøebu propojit je do jednoho celku, to je mo¾né pokud jsou databáze stavìny na nìjaké formì RDF trojic, 
+nebo jsou do tohoto formátu alespoò pøevoditelné. 
+Tak vznikl komunitní projekt Linking Open Data\footnote{\url{http://www.w3.org/wiki/SweoIG/TaskForces/CommunityProjects/LinkingOpenData}} k nìmu dále Linked 
+Data\footnote{\url{linkeddata.org}}, ty si dávají za cíl propojit entity z rùzných databází (tzv. SameAs links propojující rùzné URI v~jednotlivých 
+databázích zastupující stejnou vìc), takto je popropojované opravdu velké mno¾ství rùzných databází, jak je vidìt na grafu v Appendixu, hlavním 
+støedem dat je DBpedia, souèasnì ale vznikají souvislej¹í komponenty na pár místech v grafu podle zájmových oblastí rùzných databází. Jak je vidìt, 
+rozsah takto propojených znalostních bází je opravdu velký a pro úèely tohoto projektu je velmi dobøe vyu¾itelný.
+%\section{Gensim}
+\section{AlchemyAPI}
+AlchemyAPI je webová slu¾ba (\emph{SaaS API}\footnote{Software as a Service Application Programming Interface}) stejnojmenné spoleènosti poskytující 
+¹irokou ¹kálu nástrojù v~oblasti zpracování pøirozeného jazyka. Mezi hlavní nástroje patøí rozpoznávání pojmenovaných entit a jejich desambiguace 
+pomocí URI z~databází z~Linked Data, rozpoznávání výrokù (typu \uv{Takové kroky rozhodnì nemù¾eme nechat bez odpovìdi}, øekl mluvèí spoleènosti), 
+rozpoznávání klíèových slov, extrakce konceptù a dal¹í.
+
+%\subsection{Rozpoznávání pojmenovaných entit}
+%\subsection{Rozpoznávání výrokù}
+
+
+\chapter{Závìr} % pøedpokládaný rozsah 1 normostrana
+
+\bibliographystyle{plain}  % bibliografický styl 
+\bibliography{literatura} % soubor s citovanými
+                           % polo¾kami bibliografie 
+
+\end{document}

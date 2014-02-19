@@ -1,0 +1,14 @@
+[0] Config.pm:425> INFO - This is Biber 1.7
+[0] Config.pm:428> INFO - Logfile is 'master_thesis.blg'
+[60] biber:252> INFO - === Tue Nov 12, 2013, 22:13:25
+[61] Biber.pm:333> INFO - Reading 'master_thesis.bcf'
+[116] Biber.pm:630> INFO - Found 12 citekeys in bib section 0
+[131] Biber.pm:2997> INFO - Processing section 0
+[146] Biber.pm:3134> INFO - Looking for bibtex format file 'literatura.bib' for section 0
+[148] bibtex.pm:907> INFO - Decoding LaTeX character macros into UTF-8
+[152] bibtex.pm:782> INFO - Found BibTeX data source 'literatura.bib'
+[233] Biber.pm:2883> INFO - Overriding locale 'en_US.UTF-8' default tailoring 'variable = shifted' with 'variable = non-ignorable'
+[233] Biber.pm:2889> INFO - Sorting 'entry' list 'nty' keys
+[233] Biber.pm:2893> INFO - No sort tailoring available for locale 'en_US.UTF-8'
+[265] bbl.pm:479> INFO - Writing 'master_thesis.bbl' with encoding 'UTF-8'
+[267] bbl.pm:552> INFO - Output to master_thesis.bbl

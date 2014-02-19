@@ -1,0 +1,42 @@
+\documentclass[11pt,draft,oneside]{fithesis}
+\usepackage[T1]{fontenc}
+\usepackage[czech]{babel}
+\usepackage[plainpages=false, pdfpagelabels]{hyperref}
+\thesistitle{Automatické seskupování zpravodajských článků týkajících se stejné události}
+\thesissubtitle{Diplomová práce}
+\thesisstudent{Jiří Vejvoda}
+\thesiswoman{false}
+\thesisfaculty{fi}
+\thesisyear{podzim 2013}
+\thesislang{cs}
+\thesisadvisor{doc. RNDr. Petr Sojka, PhD.}
+
+\begin{document}
+\FrontMatter
+\ThesisTitlePage
+
+\begin{ThesisDeclaration}
+\DeclarationText
+\AdvisorName
+\end{ThesisDeclaration}
+
+\begin{ThesisThanks}
+Zde bude uvedeno \uv{poděkování} ... 
+\end{ThesisThanks}
+
+Obdobně jako poděkování se mohou vysadit shrnutí a klíčová 
+slova pomocí prostředí Thesisacti a ThesisKeyWordsi.
+
+\MainMatter
+\tableofcontents
+\chapter*{Úvod}
+Text ...
+
+% Následují další kapitoly a podkapitoly, popřípadě závěr, dodatky, 
+% seznam literatury či použitých obrázků nebo tabulek.
+
+%\bibliographystyle{plain}  % bibliografický styl 
+%\bibliography{literatura} % soubor s citovanými
+                           % položkami bibliografie 
+
+\end{document}

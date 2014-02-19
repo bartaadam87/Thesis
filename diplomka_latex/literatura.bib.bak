@@ -1,0 +1,37 @@
+@ONLINE{alchemy,
+  author = "AlchemyAPI, Inc.",
+  title = "AlchemyAPI",
+  year = "2013",
+  cited = "11. 7. 2013",
+  url = "www.alchemyapi.com"
+}
+
+@INPROCEEDINGS{stanford_ner,
+  author = {Jenny Rose Finkel and Trond Grenager and Christopher Manning},
+  title = {Incorporating Non-local Information into Information Extraction Systems by Gibbs Sampling},
+  booktitle = {Proceedings of the 43rd Annual Meeting of the Association for Computational Linguistics (ACL 2005)},
+  year = 2005,
+  pages = {363-370},
+  url = {http://nlp.stanford.edu/~manning/papers/gibbscrf3.pdf}
+}
+
+@inproceedings{illinois_ner,
+  author = {L. Ratinov and D. Roth},
+  title = {Design Challenges and Misconceptions in Named Entity Recognition},
+  booktitle = {CoNLL},
+  month = {6},
+  year = {2009},
+  url = " http://cogcomp.cs.illinois.edu/papers/RatinovRo09.pdf",
+  funding = {MIAS, SoD, Library},
+  projects = {IE},
+  comment = {Named entity recognition; information extraction; knowledge resources; word class models; gazetteers; non-local features; global features; inference methods; BIO vs. BIOLU; text chunk representation},
+}
+
+@book{nltk,
+ author = {Bird, Steven and Klein, Ewan and Loper, Edward},
+ title = {Natural Language Processing with Python},
+ year = {2009},
+ isbn = {0596516495, 9780596516499},
+ edition = {1st},
+ publisher = {O'Reilly Media, Inc.},
+} 

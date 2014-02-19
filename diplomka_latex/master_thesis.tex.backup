@@ -1,0 +1,338 @@
+%PS stary fithesis, isolatin2
+\documentclass[12pt, draft, oneside]{fithesis2}
+%PS pro lepsi zarovnani a zlom
+\usepackage[protrusion=true,expansion=true]{microtype}
+\usepackage{cmap,tgpagella}
+\usepackage[T1]{fontenc}
+\usepackage[czech]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{csquotes}
+\DeclareQuoteStyle{czech}
+  {\quotedblbase}
+  {\textquotedblleft}
+  {\textquoteleft}
+  {\textquoteright}
+
+\renewcommand{\uv}[1]{
+  \enquote{#1}
+}
+\usepackage{mathtools}
+\usepackage[plainpages=false, pdfpagelabels, unicode]{hyperref}
+\usepackage{breakurl}
+\makeatletter
+\g@addto@macro{\UrlBreaks}{%
+ \do\/\do\0\do\1\do\2\do\3\do\4\do\5%
+  \do\6\do\7\do\8\do\9}
+\makeatother
+% \usepackage[
+%    backend=bibtex8      % if we want unicode 
+%   ,style=iso-authoryear % or iso-numeric for numeric citation method          
+%   ,babel=other        % to support multiple languages in bibliography
+%   ,sortlocale=cs_CZ   % locale of main language, it is for sorting
+%   ,bibencoding=UTF8   % this is necessary only if bibliography file is in different encoding than main document
+% ]{biblatex}
+\usepackage[backend=biber, citestyle=numeric]{biblatex}
+% \bibliographystyle{csplain}
+\addbibresource{literatura.bib}
+\thesistitle{Seskupování zpravodajských článků o~stejné události}
+\thesissubtitle{Diplomová práce}
+\thesisstudent{Jiří Vejvoda}
+\thesiswoman{false}
+\thesisfaculty{fi}
+\thesisyear{podzim 2013}
+\thesislang{cs}
+\thesisadvisor{doc. RNDr. Petr Sojka, PhD.}
+
+\begin{document}
+\hyphenation{Alchemy-API}
+\FrontMatter
+\ThesisTitlePage
+
+\begin{ThesisDeclaration}
+\DeclarationText
+\AdvisorName
+\end{ThesisDeclaration}
+
+\begin{ThesisThanks}
+Zde bude uvedeno \uv{poděkování} ... 
+\end{ThesisThanks}
+
+Obdobně jako poděkování se mohou vysadit shrnutí a~klíčová 
+slova pomocí prostředí ThesisAbstract a~ThesisKeyWords.
+
+% vlozit oficialni zadani
+
+% vlozit prohlaseni autora skolniho dila
+% https://is.muni.cz/auth/do/fi/formulare/SO/Prohlaseni_autora_skolniho_dila_v3.pdf
+
+\MainMatter
+\tableofcontents
+\chapter{Úvod} % předpokládaný rozsah 1 normostrana
+% sirsi kontext zadani, prehled prace, zamereni kapitol
+Text ...
+
+\iffalse
+Oficialni zadani prace
+
+Student zpracuje téma automatického sémantického seskupování (clustering) dokumentů typu zpravodajských článků (typicky o~stejné události). Vzhledem k~několika různým 
+hlavním zdrojům a~vývoji jednotlivých událostí v~čase je možné rozčlenit články do skupin podle těchto událostí. Součástí práce bude také rešerše dostupných technik 
+a~nástrojů, které jsou třeba k~řešení tohoto problému (rozpoznávání pojmenovaných entit, využití znalostní báse, metody distributivní sémantiky (LDA) případně dalších 
+nástrojů pro sémantickou analýzu textu).
+
+V~praktické části po analýze problému navrhne a~implementuje automatický zpravodajský rešeršní systém pro automatické seskupování zpravodajských článků a~provede 
+jeho vyhodnocení a~vyhodnocení použitých metod na reálných datech ze zpravodajských serverů.
+
+Predbezne: Student zpracuje téma automatického seskupování (clustering) dokumentů typu zpravodajských článků. Vzhledem k~několika různým hlavním zdrojům a~vývoji 
+jednotlivých událostí v~čase je možné rozčlenit články do skupin podle těchto událostí. Hlavním cílem práce je analýza a~návrh systému, který bude takto činit 
+automaticky a~jeho implementace. Součástí práce bude také rešerše dostupných technik a~nástrojů, které se nabízejí k~řešení tohoto problému. Především rozpoznávání 
+pojmenovaných entit, případně další nástroje pro sémantickou analýzu textu.
+\fi
+
+
+\chapter{Seskupování zpráv popisujících stejnou událost} % předpokládaný rozsah 4-6 normostran
+% pojmy, definice, z mind map general concepts...
+Denně vychází velké množství zpravodajských článků, jejich autoři od sebe navzájem často opisují, ten stejný článek je mnohdy rozesílán několika 
+různými RSS kanály. K~jedné světové události mohou vycházet články několik dní až týdnů podle závažnosti nebo atraktivity události. 
+Orientace v~takovém množství je čím dál náročnější.
+
+Projekt si dává za cíl vytvoření systému pro automatické rozdělení množiny zpravodajských článků na disjunktní podmnožiny podle událostí, které články 
+popisují. Toto rozdělení má širokou škálu uplatnění, nejdůležitější je přetváření chaotických informací na strukturovanou formu, která je mnohem vhodnější 
+k~dalšímu automatickému zpracování. To mohou velmi ocenit například zpravodajské služby, velikosti podmnožin jsou také dobrým 
+ukazatelem atraktivity události v~rámci dané oblasti (specifikované výběrem zdrojů pro zpracovávané články). Při studování nějaké konkrétní události 
+je to snadný přístup ke všem dostupným informacím zveřejněným danými zdroji.
+
+Na toto rozdělení do podmnožin je možné pohlížet také jako na relaci mezi dvojicemi článků na 
+této množině. Dva články jsou v~relaci, jedině když oba popisují tutéž událost. Z~toho triviálně vyplývá, že tato relace je reflexivní a~symetrická. 
+Transitivitu můžeme jednoduše získat metodikou, kdy článek patří do clusteru ve chvíli, kdy jeho skóre přesáhne definovanou hranici alespoň s~jedním 
+dalším článkem v~daném clusteru. Tím získáme toto rozdělení ve formě relace ekvivalence.
+
+Systém si klade za cíl zpracovávat i~menší soubory vstupních dat, pro které by bylo (kvůli velikosti) nevhodné statistické zpracování. 
+
+\section{Dosavadní přístupy}
+\subsection{Konkrétní řešení}
+% predchozi prace (mahout...)
+
+  % - kap. 3 chybi uvod (pred nadpisem 3.1 - cim se kap. zabyva a proc, co se v ni ctenar docte, prip. jak navazuje na predchozi) - doplneno
+  % - uziti obcas predchazi definici (napr. NER) - upraveno
+  % nebo neni pojem definovan vubec (Gibbsovo vzorkovani). - zrovna u Gibbsova vzorkovani mi prijde vice informaci nez je uvedene uz prilisne odbihani od tematu prace
+  % prvni veta kap 4 mluvi o systemu, ale ten bude definovan az pozdeji. - stara pracovni cast, pozkopirovane uryvky bez revize, tato cast nebyla myslena na kontrolu
+  % - uziti zkratek v nadpisech by se melo minimalizovat (vim, ze vyhnout se lze tezce) - BoW a TF-IDF prejmenovano na Vector Space Model
+  % - pouzivate dlouha souveti (posl. veta 3.1) a dlouhe odstavce (pres pul strany v LDA) - o tom, ze pouzivam casto prilis douha souveti si jsem vedom, snazim se davat si na to pozor, obcas mi to bohuzel utece, u LDA by bylo rozdelovani tohoto odstavce naopak matouci, cely odstavec popisuje zpracovani v ramci LDA a neni zadne moc vhodne misto kde by to bylo dobre delit
+  %   - to cteni ztezuje
+% - mnohde chybi citace ci odkazy - casto jsem si tim nebyl jisty, na techto mistech byly uvedene i komentare ve zdrojovem kodu v poli \iffalse \fi mate na mysli tyto nebo jeste nektere dalsi?
+  % ("graf v Appendixu") ; Appendix -> Priloha - opraveno, graf mam zatim jako obrazek vedle, na jeho vlozeni do prace se teprve chystam
+  % - co je "vec" Freebase? entita? - upraveno, stejny vyraz je i u DBPedie, vzniklo to z toho, ze DBPedia sama sve zaznamy oznacuje jako things zde http://dbpedia.org/About tak jsem to proste prelozil, ze to bude takto asi nejvernejsi, ale jeste pozjistuji co se tim konkretne mysli a nahradim to nejakym vicerikajicim a presnejsim vyrazem
+  % - nejsou vazany neslabicne predlozky [?Makefile] - zakladni Makefile doplnen do SVN, v kompilaci jsem pridal zpracovani programem vlna
+  % - 3.4.1 se nazyva Vector Space Model (VSM) - opraveno
+  % - v osnove nevidim ANAlyzu a NAvrh vaseho Systemu. - je planovana do kapitoly vlastni pristup k reseni problemu, jak je uvedeno v komentarich zdrojoveho kodu prace
+  % - v kap. 3 se nastroje a techniky mixuji, vice by se mi libilo
+  %   cleneni na techniky+pojmy a teprve nasledne sw, ktery je implementuje - trochu jsem to prekopal, hlavne sekci s knowledge base
+
+\chapter{Využitelné nástroje a~techniky} % předpokládaný rozsah 4-5 normostran
+Systém navržený v~rámci této práce bude využívat různé nástroje a~techniky ke zpracování přirozeného jazyka (\emph{NLP -- Natural Language Processing}) 
+a~pomocí jejich výstupů dosahovat vlastních výsledků. Problém svým charakterem spadá do sémantické analýzy, uvedené nástroje 
+a~techniky se zabývají právě touto rovinou jazyka. Ostatní potřebné nástroje zpracovávající data na jiných úrovních budou uvedeny a~popsány 
+v~kapitole o~předzpracování vstupních dat.
+
+
+\section{Klasické NER}
+Rozpoznávání pojmenovaných entit (\emph{NER~--~Named Entity Recognition}) je tradiční disciplína NLP zabývající se detekcí a~kategorizací 
+pojmenovaných entit jako jsou osobní jména, názvy míst a~organizací a~různé další. Sice se nedá říci, že by bylo kompletně 
+vyřešené, ale dává v~dnešní době použitelné výsledky minimálně pro angličtinu a~několik dalších široce používaných jazyků. 
+% Ty totiž logicky nejvíce odhalují souvislosti mezi jednotlivými zpravodajskými články. Výhoda pojmenovaných entit je také v~tom, 
+% že nejsou tolik jazykově zatížené jako ostatní slova v~textu článku a systém by ve výsledku mohl fungovat na článcích v~různých 
+% jazycích, to je ovšem podmíněno také tím, že musí být pro všechny jazyky podpora ve zvoleném NER nástroji. 
+
+Tato problematika je ve většině případů řešena statistickým přístupem, kdy se naučí modely na trénovacích datech (korpusech 
+s~vyznačenými pojmenovanými entitami) a~tyto modely jsou dále využívány k~detekci pojmenovaných entit na nových vstupních datech. Jako 
+trénovací data se pro angličtinu často používají korpusy vytvořené při příležitosti zadávání sdíleného úkolu na konferencích 
+CoNLL, hlavně z~roku 2003\iffalse citace na conll 2003 shared task \fi, případně ještě z~roku 2008, kde byl sice zadaný sdílený úkol jiný, % preformulovat CoNLL?
+poskytnutý korpus měl ovšem vyznačené i~pojmenované entity. Rozpoznávané entity nejčastěji bývají osoby, organizace a~místa, 
+případně se ještě přidává zvláštní označení pro blíže neurčené entity. Toto rozdělení je především určeno způsobem označkování trénovacího 
+korpusu a~rozdělení je tedy možné udělat i~jemnější. Samozřejmě platí, že čím více rozpoznávaných entit, tím stoupá náročnost úkolu a~většinou 
+se to negativně projeví na úspěšnosti.
+
+\subsection{Dostupné nástroje}
+Samotných NER nástrojů je větší množství, co se zpracování angličitny týče, určitě za zmínku stojí Stanford Named Entity Recognizer~\cite{stanford_ner}, 
+dále pak Illinois Named Entity Tagger~\cite{illinois_ner}, případně ještě modul dostupný z~NLTK knihovny~\cite{nltk} pro NLP v~Pythonu. Důležitým aspektem je 
+i~licence, pod kterou jsou nástroje nabízené, stanfordský parser je vydán pod GPL, NLTK pod Apache licencí verze 2 a~Illinois má vlastní licenci 
+umožňující volné použití pro studijní a~akademické účely a~omezující komerční placené využívání.\iffalse citace na licence \fi
+
+Všechny jmenované nástroje mají tu výhodu, že je možné je nainstalovat a~využívat ve specifickém programu relativně jednoduše, zajištění podpory pro 
+další jazyk je většinou možné vytvořením dostatečně velkého označkovaného korpusu a~naučením modelu pomocí tohoto korpusu. Nehrozí, že by nástroj 
+během pár let příliš zestárl a~celková efektivita programu, kde je využíván, by rapidně klesla. Tyto nástroje jsou ovšem určené především na vyznačení 
+daných entit v~textu. Samotný text a~druh entity neříká nic o~tom, co daná entita zastupuje, je potřeba dodatečné zpracování už jen k~určení, které 
+entity v~jednom textu označují stejnou věc. Toto zpracování je netriviální už kvůli používání ruzných zkratek pro názvy organizací, míst (New York, NY, N.~Y.), 
+různé skloňování jmen, případně neuvádění křestních a~prostředních jmen, opět jejich zkracování, používání přezdívek a~pod. 
+
+\section{NER se zjednoznačněním entit}
+Jedním ze způsobů, jakými se dají zmíněné problémy řešit, je využívání znalostních bází (anglicky \emph{Knowledge Base}), kde jsou sesbírané 
+různé faktické informace o~reálném světě. Vytváření a~využívání znalostních bází je směr, jakým se aktuálně orientuje hodně aplikací 
+zabývajících se NLP\footnote{Tento trend je možné pozorovat i~u~napojení Googlem vytvořeného Knowledge Graph na jeho vyhledávač v~roce 
+2012\iffalse je tu potřebná citace? http://googleblog.blogspot.co.uk/2012/05/introducing-knowledge-graph-things-not.html \fi}, jedná 
+se o~další krok k~analýze sémantické roviny jazyka.
+
+Napojení na znalostní báze 
+má hlavní výhodu v~tom, že je možné pojmenované entity zjednoznačnit (s~určitou pravděpodobností), vyhledáním pojmenované entity 
+v~databázích, kde jsou jednotlivé odkazy na tyto záznamy (URI) v~rámci databáze jedinečné. Samozřejmě se může stát, že některé označené 
+entity se nepodaří propojit se záznamy v~databázích ať už proto, že pravděpodobnost vyšla příliš malá, záznam v~databázi chybí, nebo byla 
+entita propojena s~chybným záznamem.
+
+\subsection{Znalostní báze}
+Rozsah znalostních bází neustále roste a~samotné databáze se liší svým zaměřením, ať už tématickým nebo 
+lokálním/globálním, a~samozřejmě také rozsahem. Dalším specifikem je, 
+jak rychle údaje v~databázi stárnou, pro naše účely budou nejdůležitější databáze s~geografickými názvy, známými osobnostmi, společnostmi a~údálostmi. 
+Geografická data netrpí tolik zmíněným stárnutím, kdežto mezi známé osobnosti a~společnosti přibývají často zmiňované entity velmi rychle a~často se tomu tak 
+děje právě na základě událostí, které popisují aktuální zpravodajské články, které má tento projekt za cíl zpracovávat. 
+Je tu tedy kladen velký důraz na aktuálnost dat ve znalostní bázi, přesněji je nutné aby existovaly záznamy o~entitách, které vznikly nebo se staly 
+známými až v~poslední době. Znalostní báze je tedy nejlepší využívat přímo online s~nejaktuálnějšími záznamy.
+
+Základní stavební jednotkou dat uvnitř databází jsou RDF trojice (\emph{Resource Description Framework}), ty reprezentují vždy vztah dvou entit a~celou 
+databázi je pak možné si nejjednodušeji představit jako orientovaný graf. Definice těchto trojic má spíše abstraktní formu, každá databáze používá 
+svou vlastní implementaci, je však přesně nadefinována jejich serializace a~díky tomu je možné propojovat RDF trojice mezi různými databázemi. 
+
+Mezi hlavní znalostní báze patří DBpedia~\cite{dbpedia} vyvíjená Lipskou univerzitou a~Svobodnou univerzitou Berlín, první verze byla 
+vydána na začátku roku 2007. Databáze 
+je vytvářena ze stránek Wikipedia.org, používá se automatická extrakce strukturovaných dat především z~tabulek se základními informacemi. Stejně jako 
+klasická Wikipedia je i~DBpedia vícejazyčná, anglická verze obsahuje 3,77 milionu záznamů, z~toho 2,35 milionu je zařazeno do ontologie, celkově 
+DBpedia sestává z~10,3 milionů záznamů ve 111 různých jazycích. DBpedia obsahuje 1,89 miliardy RDF trojic a~je tak největší volně dostupnou znalostní 
+bází~\cite{dbpedia_about}.
+
+Další rozsáhlá volně dostupná znalostní báze je Freebase založená roku 2007 společností Metaweb\footnote{V~roce 2010 koupena společností Google, která Freebase 
+použila jako jeden ze základních prvků při tvorbě svého Knowledge Graph.}, ta je narozdíl od DBpedie nejen automaticky vyextrahovaná z~Wikipedie, 
+využívá automatickou extrakci i~z~dalších zdrojů a~hlavně je část jejích dat přímo ručně vytvořena uživateli. Freebase obsahuje téměř 40 milionů 
+záznamů\footnote{vnitřně se jim říká \emph{topics} a~jsou k~nim přidružené dodatečné informace včetně menší ontologie} a~přes 337 milionů RDF trojic.
+
+\subsection{Linked Data}
+Velké množství ruzných znalostních bází přineslo potřebu propojit je do jednoho celku, to je možné pokud jsou databáze stavěny na nějaké formě RDF trojic, 
+nebo jsou do tohoto formátu alespoň převoditelné. 
+Tak vznikl komunitní projekt \href{http://www.w3.org/wiki/SweoIG/TaskForces/CommunityProjects/LinkingOpenData}{Linking Open Data}~\cite{linkingopendata} 
+a~k~němu dále \href{http://linkeddata.org}{Linked Data}~\cite{linkeddata}, ty si dávají za cíl propojit entity z~různých databází 
+(tzv. \emph{SameAs links} propojující různé URI v~jednotlivých 
+databázích zastupujících stejnou věc). Takto je popropojované opravdu velké množství různých databází, jak je vidět na grafu v~Příloze, hlavním 
+středem dat je DBpedia, současně ale vznikají souvislejší komponenty na pár místech v~grafu podle zaměření různých databází. Jak je vidět, 
+rozsah takto propojených znalostních bází je opravdu velký a~pro účely tohoto projektu je velmi dobře využitelný.
+
+\subsection{Nástroje využívající znalostní báze}
+Mezi nástroje na detekci pojmenovaných entit s~následným zjednoznačněním pomocí znalostních bází patří například AlchemyAPI~\cite{alchemy} od 
+AlchemyAPI,~Inc. a~OpenCalais~\cite{opencalais} od Thomson Reuters, detailnější přehled dostupných nástrojů je obsáhle zpracován v~\cite{market_study_NER}. 
+\subsubsection{AlchemyAPI}
+AlchemyAPI je webová služba (\emph{SaaS API~--~Software as a~Service Application Programming Interface}) stejnojmenné společnosti poskytující 
+širokou škálu nástrojů v~oblasti zpracování přirozeného jazyka. Mezi hlavní nástroje patří rozpoznávání pojmenovaných entit a~jejich zjednoznačnění 
+pomocí URI z~databází z~Linked Data, rozpoznávání výroků (typu \uv{Takové kroky rozhodně nemůžeme nechat bez odpovědi}, řekl mluvčí společnosti), 
+rozpoznávání klíčových slov, extrakce konceptů a~další.
+
+K~nástroji se přistupuje přes web pomocí REST API (\emph{Representational State Transfer}), kde veškerá komunikace probíhá pomocí HTTP dotazů. 
+K~dispozici je také několik knihoven (pro několik programovacích jazyků, mimo jiné také pro Python) zajišťující a~zjednodušující tuto komunikaci. 
+Vstupem pro aplikaci mohou být volně dostupná data na webové adrese, vlastní HTML kód, nebo přímo čistý text. Nástroj nabízí i~extrakci a~čištění textu 
+z~HTML stránky, takto získaný text je potom možné zařadit do výstupu nástroje společně se zbytkem výsledků. 
+Výstup z~aplikace je volitelně buď XML, JSON, nebo RDF.
+
+%\subsubsection{OpenCalais}
+% doplnit i opencalais pro lepsi objektivitu?
+
+\section{Distributivní sémantika a~Gensim}
+% pridat distributive approach z mind map
+Mezi použitelné (a~v~některých aplikacích také používané) metody patří i~distributivní sémantika, tou zde myslíme sémantickou analýzu zastoupenou především 
+LSA (\emph{Latentní Sémantická Analýza}) a~LDA (\emph{Latentní Dirichletova Alokace}). Tyto metody jsou určené k~výpočtu podobnosti dokumentů 
+a~používají statistický přístup. Cílem této práce není detailní vysvětlení těchto technik, zaměřím se spíše na jejich základní principy a~vlastnosti 
+a~omezení z~nich vyplývající.
+\subsection{Vector Space Model}
+Distributivní sémantika nahlíží na dokumenty jako na množiny slov (anglicky \emph{BoW~--~Bag of Words} a~přesěji se jedná spíše o~multimnožiny, protože 
+nás zajímá počet výskytů daných slov, ztrácíme tak především informaci o~pořadí slov v~dokumentu). Základní princip je převedení dokumentu na 
+vektor, skupina dokumentů je tedy zobrazena do vektorového prostoru (odtud \emph{Vector Space Model~--~VSM}), kde je potom možné takto 
+reprezentované dokumenty porovnávat. V~tomto vektorovém prostoru odpovídá každá jeho dimenze jednomu ze slov použitých v~sadě dokumentů, případně 
+jednomu slovu z~použitého slovníku, hodnota vektoru v~té dimenzi pak může být binarní (1 pokud se slovo vyskytuje v~dokumentu, 0 jinak), častěji 
+však četnost daného slova v~dokumentu.
+
+K~zohledňování přidané informace každého 
+slova je možné použít metodu TF-IDF (\emph{Term Frequency~--~Inverse Document Frequency}), pak se místo četnosti uvádí hodnota vypočítaná jako 
+frekvence slova v~daném dokumentu vynásobená logaritmem podílu celkového počtu dokumentů ku počtu dokumentů obsahujících dané slovo. IDF část 
+z~TF-IDF váží frekvenci slova v~dokumentech tím, jak často se v~dokumentech vyskytuje, například u~slov, které se vyskytují ve všech dokumentech, se hodnota 
+úplně vynuluje.
+
+Při výpočtu podobnosti je nutné vektory reprezentující dokumenty buď normalizovat, pak je možné použít euklidovskou vzdálenost, nebo je možné je 
+rovnou porovnávat úhlově, k~tomu se hodí cosinová míra, ta se také nejčastěji používá.
+
+\subsection{Latentní sémantická analýza}
+Vzhledem k~velkému počtu dimenzí vektorového prostoru je vhodné tento počet co možná nejvíce snížit, k~tomu se využívá několik technik, zde se nebudu zabývat 
+těmi, které se dají řadit mezi předzpracování vstupních dat, ty budou uvedené v~příslušné kapitole. Zde se zaměřím především na techniky nejen přispívající 
+ke snížení dimenzionality, ale také k~lepší abstrakci při porovnávání dat.
+
+Jednou z~těchto technik je LSA, zde už vektor není reprezentován jednotlivými slovy, 
+ale spíše tematickými koncepty, občas se jim také říká jednoduše témata. Každé takové téma je reprezentováno několika slovy, které ho charakterizují a~to s~různými 
+vahami. Jedno slovo je typicky součástí několika témat (v~každém s~jinou vahou, podle toho, nakolik se váže k~ostatním slovům v~tématu). Vektorový prostor 
+má potom počet dimenzí odpovídající počtu vytvořených témat a~dokumenty jsou násladně porovnávány právě pomocí zastoupení těchto témat. V~LSA je potřeba 
+předem rozhodnout, kolik témat se pro zpracování vytvoří. Čím větší počet, tím jemnější rozdělení by se mělo vytvořit, naopak příliš malý počet nebude 
+schopný dobře zachytit rozdíly u~příbuznějších témat. LSA pomáhá abstrakci především tím, že například dva dokumenty popisující podobnou věc, ale používající 
+jiné termíny, zde mohou mít netriviální podobnost i~když v~klasickém TF-IDF by byla nulová, protože by nebyla použita stejná slova.
+
+Jednotlivá témata jsou získána pomocí metody \emph{Singular Value Decomposition} z~matice dokumentů (například ve formě TF-IDF) a~počtu požadovaných témat.
+
+
+\subsection{Latentní Dirichletova alokace}
+Z~klasické LSA je potom možné vyvodit pLSA (pravděpodobnostní Latentní Sémantická Analýza) založenou více na teorii pravděpodobnosti než pouze na statistice 
+a~lineární algebře. Ta přináší stabilnější matematický základ a~lepší výsledky, současně má ovšem problémy s~přeučováním a~není jasné jak určit 
+pravděpodobnost dokumentu mimo trénovací množinu~\cite{blei_lda}.
+
+Tyto problémy řeší LDA, podobně jako pLSA je založena na pravděpodobnosti, je potřeba si dopředu určit jaký počet témat chceme vytvořit. LDA využívá dvě 
+statistická rozdělení, Dirichletovo a~multinomické. Dirichletovo rozdělení s~parametrem $\alpha$, což je vektor jehož počet dimenzí odpovídá zvolenému počtu 
+témat, modeluje výběr odpovídajících témat pro daný dokument (multinomické rozdělení pravděpodobností $\theta$~témat pro každý dokument). Hodnoty $\alpha$~na 
+jednotlivých pozicích musí být menší než jedna (a~většinou jsou stejné), abychom dostali efekt, kdy dané téma dokumentu buď odpovídá nebo neodpovídá 
+(pravděpodobnost 1 nebo 0) a~nic mezi tím. Podobně je to s~Dirichletovým rozdělením modelujícím výběr slov pro jednotlivá témata, kde je parametr $\beta$, 
+který tentokrát má počet dimenzí odpovídající velikosti slovníku a~jehož hodnoty jsou vetšinou stejné a~menší než jedna (chceme aby témata byla zastoupena 
+spíše méně než více slovy). Zde se vytváří multinomické rozdělení pravděpodobností $\phi$~pro každé téma. Dále pro každou pozici slova $i, j$ kde $i$~označuje 
+dokument a~$j$~pozici slova v~tomto dokumentu se vybere na základě multinomického rozdělení $\theta_i$~pravděpodobnost tématu $z_{i,j}$, pro stejnou pozici 
+se naopak z~$\phi_{z_{i,j}}$ vybere příslušné slovo na této pozici $w_{i,j}$. Tato slova jsou jediné známé veličiny na začátku zpracování a~na základě 
+nich, se optimalizují ostatní parametry, aby se dosáhlo co nejvyšší pravděpodobnosti modelu. Samotná optimalizace je možná například Gibbsovým vzorkováním.
+
+Následné zjišťování podobnosti mezi dokumenty už koresponduje s~LSA, dokument je reprezentován zastoupením témat (vektorem témat), o~kterých pojednává 
+a~parametr $\alpha$ zajišťuje, že těchto témat nebude příliš velké množství a~tím pádem bude lépe možné od sebe dokumenty tematicky rozlišit (při zastoupení 
+většího počtu témat u~každého článku by mohlo hrozit, že si všechny dokumenty budou příliš podobné).
+
+
+\subsection{Gensim}
+Gensim~\cite{gensim} je pythonovská knihovna implementující několik technik distributivní sémantiky. Součástí jsou kromě pLSA všechny zde zmíněné metody 
+a~několik dalších. Jedna z~hlavních výhod je kvalitní API s~dobrou dokumentací a~jednoduchost použití, další z~výhod je dobrá škálovatelnost vstupních dat 
+(myšleno především na čím dále větší data). Program zvládne běžet s~konstantní náročností na operační pamět, velká data jsou průběžně ukládána na disk 
+a~zpracovávána po dávkách. Gensim obsahuje i~metody potřebné pro základní předzpracování dat, práci se vstupním korpusem a~tvorbu slovníku. Poskytuje tak 
+kompletní funkcionalitu na zpracování dokumentů ve formátu čistého textu.
+%, ze vstupních dat si vytvoří slovník, který dále používá 
+%v~ostatních funkcích, současně umožňuje základní editaci slovníku (vyřazení příliš málo frekventovaných slov a podobně) a ukládání pro pozdější opětovné 
+%používání při dalším běhu programu. 
+
+
+\chapter{Vstupní data a~jejich předzpracování} % předpokládaný rozsah 2-3 normostrany
+\section{Charakteristika vstupních dat}
+% uvest na jaky jazyk je system zameren (plus dalsi vymezeni problemu) - DONE
+Systém zpracovává anglické zpravodajské články stažené pomocí rss kanálů, k~dispozici je i~skript napojený na existující nástroje určené pro získání
+vlastní množiny článků na zpracování (uživatel si zvolí vlastní preferované rss kanály) včetně nástrojů na předzpracování takto získaných článků 
+(především extraktor textu článku z~webové stránky). Uživatel samozřejmě může dodat i~vlastní soubor článků, který by chtěl zpracovat tímto způsobem. 
+Jako základní formát dat na zpracování je plaintext v~kódování UTF-8, je také nutné jasně vymezit nadpis článku.
+
+\section{Získávání dat}
+\section{Předzpracování dat} % Boilerpipe a spol
+\section{Dodatečná zpracování potřebná pro využití distributivní sémantiky} % tokenizace, lemmatizace, odfiltrování stopwords
+
+\chapter{Pokusy s~distributivní sémantikou} % předpokládaný rozsah 3-4 normostrany
+
+
+\chapter{Vlastní přístup k~řešení problému} % předpokládaný rozsah 7-10 normostran
+% NLP features z mind map
+% analýza -> návrh -> implementace
+\section{Zvolené nástroje}
+\section{Způsob využití výstupů těchto nástrojů k~získání výsledků}
+\section{Vlastnosti systému}
+
+
+\chapter{Vyhodnocení systému} % předpokládaný rozsah 2-3 normostrany
+
+\chapter{Závěr} % předpokládaný rozsah 1-2 normostrany
+% zpusob vyreseni problemu, moznosti rozsireni do budoucna, naplneni zadani
+
+% celkový rozsah 24-35
+
+% \bibliography{literatura}
+\printbibliography
+
+\end{document}

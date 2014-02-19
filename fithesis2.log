@@ -1,0 +1,73 @@
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.2.6)  6 FEB 2014 23:07
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**fithesis2.cls
+(./fithesis2.cls
+LaTeX2e <2011/06/27>
+Babel <3.9h> and hyphenation patterns for 2 languages loaded.
+
+LaTeX Warning: You have requested package `',
+               but the package provides `fithesis2'.
+
+Package: fithesis2 2008/12/15 version 0.1 MU thesis class
+(/usr/share/texlive/texmf-dist/tex/latex/ntgclass/rapport3.cls
+Document Class: rapport3 2004/06/07 v2.1a NTG LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/ntgclass/ntg10.clo
+File: ntg10.clo 2004/06/07 v2.1a NTG LaTeX file (size option)
+)
+\unitindent=\dimen102
+\othermargin=\dimen103
+\c@part=\count79
+\c@chapter=\count80
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@subparagraph=\count85
+\c@figure=\count86
+\c@table=\count87
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+LaTeX Info: Redefining \em on input line 826.
+\bibindent=\dimen104
+)
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.27 \ExecuteOptions{12pt,oneside,final}
+                                        
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/palatino.sty
+Package: palatino 2005/04/12 PSNFSS-v9.2a (SPQR) 
+)
+! I can't find file `fit1pptsize.clo'.
+<to be read again> 
+                   \relax 
+l.46 \input fit1\@ptsize.clo\relax
+                                  
+(Press Enter to retry, or Control-D to exit)
+Please type another input file name
+! Emergency stop.
+<to be read again> 
+                   \relax 
+l.46 \input fit1\@ptsize.clo\relax
+                                  
+*** (job aborted, file error in nonstop mode)
+
+ 
+Here is how much of TeX's memory you used:
+ 285 strings out of 495028
+ 3274 string characters out of 6181498
+ 47998 words of memory out of 5000000
+ 3580 multiletter control sequences out of 15000+600000
+ 3640 words of font info for 14 fonts, out of 8000000 for 9000
+ 14 hyphenation exceptions out of 8191
+ 23i,1n,17p,123b,41s stack positions out of 5000i,500n,10000p,200000b,80000s
+!  ==> Fatal error occurred, no output PDF file produced!
