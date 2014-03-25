@@ -34,7 +34,7 @@
 \setcounter{biburllcpenalty}{7000}
 \setcounter{biburlucpenalty}{8000}
 
-% \bibliographystyle{czechiso/czechiso}
+%\bibliographystyle{czechiso/czechiso}
 
 \addbibresource{literatura.bib}
 \thesistitle{Asistent Posuzovatele}
@@ -82,40 +82,66 @@ vedení práce.
 \tableofcontents
 \chapter{Úvod}
 
+Hlavní cíle této DP -- vytvořit klienta,~převést formuláře do jednotné elektronické podoby,~aplikace nesmí zatěžovat sudí více než je nezbytné.
 % \documentclass{article}
 % \usepackage[czech]{babel}
 % \usepackage[cp1250]{inputenc}
 
 % \begin{document}
-\chapter{Náhled do problematiky}
-Při moderních výstavách koček je i~přes velkou dostupnost výpočetní techniky stále upřednostňován zápis výsledků do papírového formuláře.
-Formuláře nemají jednotný formát a~jsou často vytištěny pomocí starých jehličkových tiskáren.
-To způsobuje,~že i~samotný tisk prázdných formulářů je velice špatný. Jednotliví soudci/rozhodčí vpisují informace nečitelně. Rukou psané hodnocení má rozdílnou úroveň. Dosavadní systém je problematický především z~důvodu špatné
-čitelnosti zápisu.
+\chapter{Základní informace}
 
-Hlavní cíle této DP -- vytvořit klienta,~převést formuláře do jednotné elektronické podoby,~aplikace nesmí zatěžovat sudí více než je nezbytné.
+\section{Náhled do problematiky}
+Při moderních výstavách koček je i~přes velkou dostupnost výpočetní techniky stále upřednostňován zápis výsledků do papírového formuláře.
+Ty ale nemají jednotný formát a~jsou často vytištěny pomocí starých jehličkových tiskáren.
+To způsobuje,~že i~samotný tisk prázdných formulářů je velice špatný. Jednotliví rozhodčí navíc často informace vpisují nečitelně a~rukou psané hodnocení má rozdílnou úroveň. Problémy dosavadního systému jsou tedy
+způsobeny především špatnou čitelností posudků a~v tomto ohledu překonanou metodou ukládání informací.
+\linebreak
+Problémem budou ale především současná pravidla výstav. Ta při posuzování nedovolují sudím mít žádné elektronické zařízení. Podle aktuálních pravidel by neměl posuzovat například sudí s kardiostimulátorem. --DOPLNIT INFORMACE Z OFICIÁLNÍCH FIFE PRAVIDEL/ODKAZ
+
+\section{Výstavní skupiny}
+Aby bylo na výstavách zajištěno přesné rozdělení posuzovaných objektů, jsou kočky děleny do čtyř hlavních skupin podle plemen.
+Tyto třídy jsou:
+\begin{itemize}
+ \item Perské a exotické (Persian \& Exotic)
+ \item Polodlouhosrsté (Semilonghair)
+ \item Krátkosrsté a somálské (Shorthair \& Somali)
+ \item Siamské, orientální a balijské (Balinese, Siamese, Oriental)
+\end{itemize}
+Hlavní skupiny jsou dále děleny na sedmnáct (resp. osmnáct) soutěžních podtříd\footnote {01 -- supreme šampionů,~02 -- supreme premiorů,~03 -- mezinárodních grandšampionů,~04 -- mezinárodních grandpremiorů,~05 -- mezinárodních šampionů,
+~06 -- mezinárodních premiorů,~07 -- šampionů,~08 -- premiorů,~09 -- otevřená nad 10 měsíců,~10 -- kastrátů nad 10 měsíců,~11 -- mladých 6 -- 10 měsíců,~12 -- mladých 3 -- 6 měsíců,~13a -- noviců od 10 měsíců,~13b -- kontrolní třída,
+~14 -- domácích koček,~15 -- mimo soutěž,~16 -- vrhy (min. 3 koťata),~17 -- veteránů nad 7 let věku}. Během výstav jsou posuzovatelé zaměřeni na specifické třídy. Během posuzování jsou tedy posuzovatelům přiděleny kočky z různých tříd.
+
+\section{Identifikační systém Easy Mind System}
+Easy Mind System\footnote {http://fifeweb.org/wp/breeds/breeds\_ems.php} (dále jen EMS) je jednotný mezinárodní systém federace FIFE
+vytvořený pro identifikaci koček za pomoci exteriérových znaků.
+V hlavičče výstavního formuláře je uvedený EMS kód složen ze tří částí\footnote{Kompletní popis na http://www1.fifeweb.org/dnld/rules/FIFe\%20EMS\%20system\%20user\%20guidelines.pdf}.
+Označení plemena\footnote{To přímo určuje jednu ze čtyř tříd, do keré je daná kočka zařazena}, barvy\footnote{Označené malým písmem} a označení barevného vzoru\footnote{Označeného číslem}.
+
+
+Při samotném posuzování slouží tedy EMS sudím pro kontrolu vzhledu posuzované kočky v porovnání k datům uvedeným na formuláři.
+
+\section{Formulář}
+V současné době se pro zápis výsledků používají pouze papírové formuláře. Posudky jsou zadávány ve třech základních jazycích.
+Angličtině, francouzštině, němčině a jazyce země, ve které je výstava pořádána. 
+
+Formát formuláře pro výstavy ale není jednotný. Opakuje se pouze hlavička formuláře, která slouží k identifikaci kočky.
 \linebreak
 
-
-Předvyplněná hlavička formuláře
+Předvyplněná hlavička formuláře je složena z:
 \begin{itemize}
 \item Číslo -- unikátní číslo přiřazené kočce na jedné specifické výstavě
 \item Plemeno -- rasa kočky
 \item EMS System code -- Easy Mind System federace FIFE pro barevné označení kočky
-\item Třída -- viz. katalogy výstav koček (rozhodně doplnit do textu)
+\item Třída -- přiřazená třída, ve které kočka soutěží
 \item Pohlaví
 \item Datum narození
 \end{itemize}
 
-Kočka při posuzování dostává bodová ohodnocení,~ale momentálně posuzovatelé tomuto bodovému ohodnocení nepřikládají velkou váhu. Tato možnost bude v~aplikaci zachována.
-
-Posudky jsou psány ve třech oficiálních jazycích: angličtina,~němčina,~francouzština a~nebo v~jazyce země,~kde se výstava pořádá.
-
-Formulář bude převeden do elektronické podoby. Hlavním cílem při přechodu z~dosavadního systému je co největší automatizace doposud ručně prováděných procesů,~s~důrazem na co nejmenší zatížení sudích.
-Základní zadaní provedou pořadatelé -- nastavení tabletů a~jejich přiřazení jednotlivým sudím. Tato přidaná práce se odrazí v~efektivnější práci s~formuláři.
+Hlavní část formuláře slouží pro vyplnění jednotlivých částí posudku a výsledného hodnocení.
+Posuzování je závyslé na rase kočky. Pro každou rasu jsou stanoveny standardy podle kterých je daný exemplář posuzován.
 \linebreak
 
-Položky formuláře
+Posudek je rozdělen na tyto části:
 \begin{itemize}
 \item Typ
 \item Hlava
@@ -128,7 +154,43 @@ Položky formuláře
 \item Komentář
 \end{itemize}
 
-Systém se bude starat o~rozdělení koček a~jejich následné přiřazení posuzovatelům (potažmo spárování s~určitým tabletem). Jakmile se informace o~kočkách zadají do systému,~dojde k~jejich rozdělení a~přiřazení. Do tabletu se nahraje specifická množina koček pro jednoho sudího.
+\chapter{Analytická část}
+
+\section{Jak výstava probíhá}
+V současné podobě probíhá celá výstava téměř bey jakékoliv výpočetní techniky. Seznamy vystavovaných koček a jejich přiřazení k jednotlivým sudím jsou vytištěny v papírové formě. Stejně tak i veškeré informace pro rozhodčí jsou
+v tištěné formě.
+
+Po začátku výstavy jsou zveřejněny rozpisy pro jednotlivé sudí a pořadí v kterém jsou zvířata posuzována. Kompletní rozpisy jsou umístěny na dostupném místě. U každého posuyovatelského stolu je navíc vyvěšen rozpis pro konkrétního sudího.
+\linebreak
+
+Pořadová čísla zvířat jsou poté vyvolávána pomocí mikrofonu.
+
+Při posuzování samotném sudí nejprve slovně zhodnotí všechny hodnocené aspekty a následně zapíše posudek do formuláře.
+Proces poszování je rozdílný sudí od sudího. Neexistuje žádný předepsaný postup posuzování.
+\linebreak
+
+Po posouzení jedné skupiny vybírá posuzovatel tzv. Best of Variety (BIV).
+
+Každé plemeno má mezinárodně uznávaný standard. Ten udává ideální vzhled kočky a jeho součástí je bodové ohodnocení jednotlivých hodnocených částí zvířete.
+Toto bodové ohodnocení by mělo být uvedeno v hodnotících formulářích. Ve stávajícím stavu toto ohodnocení není ve formuláři uvedeno a posuzovatelé tomuto bodovému ohodnocení nepřikládají velkou váhu.
+
+\section{Zabezpečení}
+
+Komunikace mezi klientem a serverem bude probíhat přes zabezpečenou bezdrátovou komunikaci (Caban 9.3.2). Vlastní hodnocení na výstavách se neobejde bez nervového vypětí. Majitelé koček mají v~mnoha případech silnou motivaci pro 
+manipulaci s~výsledky hodnocení ve svůj prospěch. Vhodný výběr zabezpečení je nutnou součástí výstavního systému. 
+Omezení pouze výběru MAC adres není vhodné z důvodu velmi snadné prolomitelnosti. Vytvoření seznamu fyzických adres jednotlivých tabletů použitých pro posuzování bude v případě útoku sloužit pouze ke drobnému zdržení.
+Dúkladnější útok ale nezadrží. --DOPLNIT PODKLADY! Wi-Fi síť by měla být zabezpečená nejlépe WPA2-PSK. --doplnit délku hesla atd. podle článku!
+Otázkou zůstává zabezpečení samotného přenosu dat.
+
+Aplikace (klient) musí nutně zajištovat zálohu dat.
+Tzn. po nečekaném výpadku musí dojít k obnovení zadaných dat.
+\linebreak
+
+\chapter{Řešení}
+Formulář bude převeden do elektronické podoby. Hlavním cílem při přechodu z~dosavadního systému je co největší automatizace doposud ručně prováděných procesů,~s~důrazem na co nejmenší zatížení sudích.
+Základní zadaní provedou pořadatelé -- nastavení tabletů a~jejich přiřazení jednotlivým sudím. Tato přidaná práce se odrazí v~efektivnější práci s~formuláři.
+
+Systém se bude starat o~rozdělení koček a~jej ich následné přiřazení posuzovatelům (potažmo spárování s~určitým tabletem). Jakmile se informace o~kočkách zadají do systému,~dojde k~jejich rozdělení a~přiřazení. Do tabletu se nahraje specifická množina koček pro jednoho sudího.
 Tato varianta možná přidá práci pořadatelům,~jelikož budou muset dávat dobrý pozor při přidělování zařízení. Jediným rozdílem pro sudí bude tedy nutá kontrola,~zda--li mají v~rukou správný tablet.
 Systém se bude také starat o správné umístění posuzovatele. Pokud se jedná například o paralelní posuzování, aplikace se bude chovat totožně jako při klasickém posuzování -- o~zbytek se postará systém sám.
 Tento přístup,~kdy sudí nebude zadávat žádné uživatelské jméno a~heslo,~přiblíží elektronické zadávání dosavadnímu papírovému formátu.
@@ -141,56 +203,153 @@ a použije se při každém uložení hodnocené kočky. Sudí nemá žádnou mo
 Rozpoznávání textu -- jedna z možností vylepšení již hotového programu bude doprogramování automatického doplňování slov v posudcích.
 Velikost slovníku použitého sudími není nikterak velká. Slova se často opakují a~tudíž by tato schopnost aplikace zřejmě velmi ulehčila a zrychlila průběh samotného posuzování.
 
-\chapter{Zabezpečení}
+\chapter{Implementace}
+\section{Použité technologie}
+\subsection{ADT Plugin}
+Android Developement Tools\footnote{Použitá verze 22.3.0, dostupná na http://developer.android.com/tools/sdk/eclipse-adt.html} (dále jen ADT) je doplněk pro vývojové prostředí Eclipse IDE\footnote{Dostupné na www.eclipse.org}.
+ADT obsahuje nástroj pro tvorbu uživatelského rozhraní,~umožňující snadný návrh GUI\footnote {Graphical User Interface -- Grafické uživatelské rozhraní}. Tento soubor nástrojů obsahuje také emulátor zařízení,~díky kterému je možné
+vytvořit širokou škálu virtuálních tabletů nebo telefonů založených na operačním systému Android.
 
-Komunikace mezi klientem a serverem bude probíhat přes zabezpečenou bezdrátovou komunikaci (Caban 9.3.2) nejlépe s nastaveným filtrováním MAC adres.
-Filtrování fyzických adres případného útočníka zajisté nezadrží,~ale minimálně zpomalí.
-Otázkou zůstává zabezpečení samotného přenosu dat.
+\subsection{Android SDK}
+Android Software Developement Kit\footnote {Použitá verze 22.3, dostupná na http://developer.android.com/tools/sdk/tools-notes.html} (dále jen SDK) je soubor knihoven a nástrojů nezbytných pro vytváření aplikací pro Android.
+Jedná se tedy o~druhý zásadní doplňkek pro Eclipse IDE a programování mobilních aplikací.
 
-Aplikace (klient) musí nutně zajištovat zálohu dat.
-Tzn. po nečekaném výpadku musí dojít k obnovení zadaných dat.\footnote{Použít zasílání dat ve formá logů? Co se stane když se nezazálohuje jedna právě vyplňovaná kolonka formuláře, ale zbytek se obnoví?}
-\linebreak
+\subsection{JSON}
+JavaScript Object Notation (dále jen JSON)\footnote {https://code.google.com/p/json-simple/}. Jednotný formát pro předávání dat ve formě strukturovaného textového řetězce. Formát JSON je platformě nezávislý.
+Výhodou přenosu dat pomocí JSONu je snadná čitelnost člověkem. 
 
-\chapter{Analytická část}
-\section{Jak výstava probíhá}
+Hlavní části balíku JSON.simple jsou JSONObject, který slouží k vytváření strukturovaných objektů. JSONParser, který slouží k dělení textového řetězce na jeho podčásti.
 
+\subsection{Android SQLite Database}
+Operační systém Android obsahuje vestavěnou SQL databázi\footnote {http://developer.android.com/reference/android/database/sqlite/SQLiteDatabase.html} určenou pro ukládání uživatelských dat.
+Tato databáze je primárně určena pro uchování kontaktů,~poznámek a~podobně. Cílem této práce je manipulace s~daty z~formulářů,~které mají předem danou strukturu. Vestavěná SQL databáze se jeví jako vhodné řešení pro ukládání a~manipulování s~těmito daty.
 
-
-\chapter{Řešení}
-
-\chapter{Implementace - Použité technologie}
-\section{ADT Plugin}
-Android Developement Tools \footnote{Použitá verze 22.3.0, dostupná naa http://developer.android.com/tools/sdk/eclipse-adt.html} (dále jen ADT) je doplněk pro vývojové prostředí Eclipse IDE. \footnote{Dostupné na www.eclipse.org}
-Tento soubor nástrojů obsahuje také emulátor zařízení,~umožnující vytvořit širokou škálu virtuálních tabletů nebo telefonů založených na operačním systému Android.
-Tento emulátor je použit ke zkoušení aplikace na několika různých tabletech, pro zajištění co nejvetší kompatibility s různými zařízeními.
-
-Druhým potřebným doplňkem pro instalaci ADT a pro programování mobilních aplikací je tzv. SDK Tools \footnote {Použitá verze 22.3, dostupná na http://developer.android.com/tools/sdk/tools-notes.html}
-
-\section{Android SDK}
-Android Software Developement Kit (dále jen SDK)
-
-\section{JSON}
-JavaScript Object Notation (dále jen JSON). Jednotný formát pro předávání dat, který je platformě nezávislý. Výhodou přenosu dat pomocí JSONu je snadná čitelnost člověkem. 
-
-\chapter{Popis struktury programu pro Android}
+\section{Popis struktury programu pro Android}
 Programy pro mobilní systém Android mají rozdílnou strukturu například od programů desktopových prostředí.
 
 Popsat src/ res/ --ten obsahuje XML soubory a pak hlavni soubor AndroidManifest.xml.
 Popsat verzi na kterou je moje aplikace cílená, zařízení na kterých bude vyzkoušená a jaká je minimální podporovaná verze.
 
-\chapter{Ergonomie Softwaru}
-Vysvětlit strohost klienta. Vyzvednout klad jednoduchosti.
+Klientská aplikace, která je určena pro sudí, má dva hlavní pohledy. Základním pohledem je seznam jednotlivých objektů, které jsou sudímu přiřazeny k posouzení. Po kliknutí na jeden objekt se otevírá okno samotného formuláře.
+Tento pohled strukturou kopíruje formát papírového formuláře. Hlavním cílem při návrhu klienta byla co možná nejbližší podoba s původními formuláři. Na rozdíl od papírových formulářů obsahuje elektronická forma ještě specifikace
+hodnoceného plemena. Tato specifikace je zobrazena jako bodové ohodnocenéí hodnocených položek pro každé plemeno.
+
+\chapter{Zpracování formulářů}
+----TODO - Data od výstavního systému jsou předána klientovi----
+Uložení dat do SQL -- Statická data sloužící pro identifikaci kočky. Výběr ohodnocení z SQL databáze probíhá podle zadaného kódu plemena.
 \linebreak
 
+V úvodním okně aplikace je sudímu zobrazen list koček, které má přiřazené k posouzení. Po kliknutí na položku listu dochází k zobrazení okna formuláře.
+Přídání SQL databáze s jednotlivým bodovým ohodnocením plemen dle standartů FIFE. Jedná se o 100 bodů, přidělených podle důležitosti vnějšího znaku ve vztahu k danému plemenu. V dosavadním hodnocení není na toto bodové ohodnocení
+brán zřetel. Přidáním ohodnocení do elektronické formy formuláře by mělo vést ke zkvalitnění a zpřesnění hodnocení.
+
+Android SQL databáze je použita pro ukládání formulářů. V první fázi dochází k zápisu dat ze serveru. Proběhne uložení "hlaviček" formulářů.
+V druhé fázi, při samotném vyhodnocování je formulář doplněn sudím, aktualizován v databázi a odeslán zpět na server.
+
+\chapter{Design uživatelského rozhraní}
+\section{Ergonomie Softwaru}
 Ergonomie je věda zaměřená na zkvalitnění činností a nástrojů tak, aby člověku co nejméně škodily při jejich provozování.
 Stejně tak ergonomie softwaru se zabývá zkvalitněním programů.
+
+\section{Uživatelské rozhraní}
+Klientská aplikace je cílena na specifickou skupinu uživatelů. Tato skupina je charakteristická svým vyšším věkem a naprostou většinou začátečnických uživatelů.
+Důležitými aspekty aplikace jsou tedy jednoduchost, přehlednost a co nejsnazší čitelnost zobrazovaného textu. 
+
+"Začínající uživatelé budou chtít aplikaci co nejjednodušší, aby porozuměli jak ji používat.
+Zkušení uživatelé budou chtít aplikaci co nejjednodušší, protože mají jiné věci na práci a nechtějí se zbytečně zdržovat."\cite[str. 43]{hoekman}
+
+Klientská aplikace je rozdělena na dva samostatné logické celky. Ty jsou složeny ze tří hlavních pohledů. Těmito pohledy jsou JurySetting, JuryActivity a MainActivity.
+
+\subsection{JurySettings}
+Pohled JurySettings je pohledem sloužícím ke spojení posuzovatelského tabletu se serverem. Jedná se o "pořadatelskou" část klienta, tedy sudí by s tímto pohledem neměl pracovat.
+V tomto pohledu jsou dvě kolonky. První je určena pro zadání ip adresy serveru, druhá pro zadání jména sudího kterému bude tablet na dané výstavě přiřazen.
+Zadané jméno rozhodčího je zobrazeno v pravém horním rohu aplikace po celou dobu běhu. Jméno nadále slouží pro snadnou identifikaci zařízení.
+
+Pole pro zadání ip adresy povoluje zadat pouze textový řetězec ve správném formátu. Pokud je zadán nepřípustný znak, aplikace uživatele upozorní. --OVERIT VUCI SKUTECNOSTI AZ TO NAPROGRAMUJU!!!--
+
+Po úspěšném spojení serverem a nahrání příslušných dat do tabletu je třeba stisknout tlačítko start. Dojde k ukončení současné aktivity, uzavření socketu a spuštění JurzActivity.
+Aplikace se v tomto kroku přepíná z "pořadatelské" do "posuzovatelské" části.
+Připravení tabletu pro posuzování obnáší tedy ze strany pořadatelů pouze zadání adresy, jména a dvou kliků.
+Pořadatelé předají předpřipravené tablety sudím se spuštěnou aplikací. Sudí obdrží zařízení se zobrazeným listem jemu přiřazených vystavovaných zvířat.
+
+\subsection{JuryActivity}
+JuryActivity na počátku zobrazuje seznam všech zvířat, která jsou sudímu přiřazena k posouzení. Kazdá položka tohoto listu zobrazuje data, která identifikují dané zvíře.
+V papírovém formuláři jsou tyto informace předtištěny v hlavičce konkrétního formuláře. Po kliknutí na položku seznamu je ukončena aktivita JuryActivity a je spuštěna formulářová aktivita MainActivity.
+
+V tomto bodě sudí přechází k samotnému hodnocení vybraného zvířete.
+
+Pokud je formulář úspěšně vyplněn, změní se barva pozadí dané položky seznamu z počáteční černé na zelenou barvu. Posuzovatel má tedy stále přehled kolik zvířat již ohodnotil a kolik jich ještě zbývá.
+
+Již vyplněné formuláře je možné opakovaně otevřít a upravit. Tato možnost je nutná z důvodu udělování titulů, které probíhá zpětně, až po posouzení všech přidělených koček. 
+
+\subsection{MainActivity}
+MainActivity je hlavní formulářovou aktivitou. Formulář je vyvolán rozkliknutím položky seznamu. 
 \linebreak
 
-Aplikace je cíleně navržena pro specifickou skupinu lidí. Sudí na výstavách jsou vyššího věku. Dá se předpokládat že naprostá většina z nich nemá zkušenosti s operačním systémem android ani s mobilními aplikacemi.
+"Designové vzory pomáhají uživatelům v rychlém pochopení nového programu a umožňují jim použít dříve nabyté zkušenosti z jiných zdrojů v nové aplikaci."\cite[str. 172]{hoekman}
+\linebreak
+
+Hlavním ukazatelem při návrhu uživatelského rozhraní byl fakt, že většina sudích jsou uživatelé s malou znalostí výpočetní techniky. Z tohoto důvodu podoba elektronického formuláře kopíruje co nejvíce svoji papírovou předlohu.
+Uživatelé při vyplňování formulářů tedy nejsou zatěžováni žádnými zbytečnými funkcemi navíc. Mohou proto využít znalosti nabyté při předchozích posuzováních. Mění se pouze forma zadávání informací, vzhled formuláře je zachován.
+
+Hlavička formuláře je automaticky generována z dat obdržených z výstavního systému.
+Slouží posuzovateli pro identifikaci zvířete a pro další kontrolu\footnote{Například dle věku zvířete je možné zhistit zda soutěží ve správné třídě.}.
+
+Položky formuláře určené pro vepisování jednotlivých částí posudku jsou opatřeny textovou nápovědou\footnote{Andoroid hint} ve třech hlavních jazycích. Tento text je při vyplňování daného textového pole skyt.
+Hodnocení vystavovaného zvířete je možné vzbrat z "roletového menu"\footnote{Android spinner}. Stejně je také řešeno udělování titulu v dané třídě.
+\linebreak
+
+Jedinou přidanou hodnotou v tomto pohledu je zobrazování bodového ohodnocení jednotlivých hodnocených aspektů. Toto bodové ohodnocení je uloženo v lokální SQL databázi a liší se pro jednotlivá plemena.
+V papírových formulářích toto hodnocení chybí a to i přes to, že by se sudí měli na tyto body brát zřetel.
+
+Zobrazení bodů v elektronickém formuláři má za cíl zpřesnění a usnadnění hodnocení.
+\linebreak
 
 Rozebrat možnost, že sudí nebudou brát aplikaci a celý výstavní systém jako klad, ale jako další překážku.
 Výstavy probíhají téměř bez jakékoliv automatizace a hlavními nástroji jsou prozatím papír a tužka. Změna zažitého systému musí být provedena pečlivě a s důrazem na cílovou skupinu uživatelů.
 
-Aplikace by měla vyhledově co nejpřesněji kopírovat papírové formuláře, aby nedošlo ke zmatení uživatelů.
+Co největší velikost písma (v klientovi nastavane na 30dp) -- snadná čitelnost.
+
+
+\subsection{Srovnání podobnosti papírového formuláře a elektronického}
+--Vložit obrázky naskenovaného listu a screenshotu aplikace--
+
+Navázat kapitolou ergonomie.
+
+\chapter{Java Server}
+\section{Server Thread}
+--OCITOVAT ZDROJAKY A SNAHU NEOBJEVOVAT KOLO
+
+--$http://www.kieser.net/linux/java_server.html$
+
+Autor: The Kieser.net team.--
+\linebreak
+Nadefinovat vlastní "protokol" aneb jak si to vlastne povida, doplnit obrazky nebo diagramy komunikace.
+\linebreak
+
+Serverové vlákno po spuštění vyčkává na příchozí spojení na definovaném portu s číslem 3344. --Rozepsat se o tom, proč není použito automatické hledání pomocí zasílání UDP packetů na broadcast.
+Namísto toho je zadávána adresa serveru na každém klientovi. Poté dochází ke spojení a otevření nového socketu pro každé zařízení. Dopsat maximální počet zařízení (Zatím 10, víc by byla pořádná výstava...)
+
+\section{Client Thread}
+Client Thread je navázán na Jury klienta. Při pokusu o spojení se serverem je otevřen socket pro obousměrnou komunikaci.
+
+\section{Práce se sockety}
+Serverové vlákno očekává spojení na portu 3344. Pokud klient vzžaduje spojení se serverem, je otevřen socket na tomto portu. Socket je vždy uzavřen po ukončení jedné aktivity klienta (Android activity - okno aplikace).
+
+Při prvotním spuštění aplikace je otevřn pohled JurySettings. Je vyžadováno zadání ip adresy serveru a jméno sudího, kterému bude na aktuální výstavě tablet přiřazen. Socket je otevřen při odeslání
+těchto dat a je oetvřen po celou dobu, kdy server odesílá do tabletu hlavičky formulářů. K zavření socketu dochází při ukončení tohoto pohledu.
+V tuto chvíli je také spuštěn pohled s výpisem jednotlivých posuzovaných objektů. Sudí zvolí jednu položku a vyplní soutěžní formulář. Při odeslání formuláře je vytvořen nový socket, data jsou uložena do vestavěné SQL databáze
+a následně předána serveru jako textový řetězec ve formátu JSON. Poté je aktuální socket uzavřen, aktivita je ukončena a je spuštěn aktualizovaný výpis vzstavovaných zvířat.
+
+\chapter{Problémy navrženého řešení}
+\section{Zastaralost pravidel FIFE}
+Pro použití klienta a výstavního softwaru na výstavách, bude třeba změnit oficiální pravidla federace FIFE.
+
+Rozebrat celý plánovaný postup nasazení systému v praxi i s problémy a jejich řešením.
+
+\chapter{Google obchod Play - ne}
+Nedistribuovat aplikaci přes obchod Play, bude přiložena k výstavnímu systému.
+
+\chapter{Závěr}
 
 \end{document}

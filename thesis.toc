@@ -4,24 +4,66 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {1}\bfseries \IeC {\'U}vod}{2}{chapter.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {2}\bfseries N\IeC {\'a}hled do problematiky}{3}{chapter.2}
+\contentsline {chapter}{\numberline {2}\bfseries Z\IeC {\'a}kladn\IeC {\'\i } informace}{3}{chapter.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {3}\bfseries Zabezpe\IeC {\v c}en\IeC {\'\i }}{5}{chapter.3}
+\contentsline {section}{\numberline {2.1}\slshape N\IeC {\'a}hled do problematiky}{3}{section.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {4}\bfseries Analytick\IeC {\'a} \IeC {\v c}\IeC {\'a}st}{6}{chapter.4}
+\contentsline {section}{\numberline {2.2}\slshape V\IeC {\'y}stavn\IeC {\'\i } skupiny}{3}{section.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.1}\slshape Jak v\IeC {\'y}stava prob\IeC {\'\i }h\IeC {\'a}}{6}{section.4.1}
+\contentsline {section}{\numberline {2.3}\slshape Identifika\IeC {\v c}n\IeC {\'\i } syst\IeC {\'e}m Easy Mind System}{4}{section.2.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {5}\bfseries \IeC {\v R}e\IeC {\v s}en\IeC {\'\i }}{7}{chapter.5}
+\contentsline {section}{\numberline {2.4}\slshape Formul\IeC {\'a}\IeC {\v r}}{4}{section.2.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {6}\bfseries Implementace - Pou\IeC {\v z}it\IeC {\'e} technologie}{8}{chapter.6}
+\contentsline {chapter}{\numberline {3}\bfseries Analytick\IeC {\'a} \IeC {\v c}\IeC {\'a}st}{6}{chapter.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.1}\slshape ADT Plugin}{8}{section.6.1}
+\contentsline {section}{\numberline {3.1}\slshape Jak v\IeC {\'y}stava prob\IeC {\'\i }h\IeC {\'a}}{6}{section.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.2}\slshape Android SDK}{8}{section.6.2}
+\contentsline {section}{\numberline {3.2}\slshape Zabezpe\IeC {\v c}en\IeC {\'\i }}{6}{section.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.3}\slshape JSON}{8}{section.6.3}
+\contentsline {chapter}{\numberline {4}\bfseries \IeC {\v R}e\IeC {\v s}en\IeC {\'\i }}{8}{chapter.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {7}\bfseries Popis struktury programu pro Android}{9}{chapter.7}
+\contentsline {chapter}{\numberline {5}\bfseries Implementace}{9}{chapter.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {8}\bfseries Ergonomie Softwaru}{10}{chapter.8}
+\contentsline {section}{\numberline {5.1}\slshape Pou\IeC {\v z}it\IeC {\'e} technologie}{9}{section.5.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.1.1}\rmfamily ADT Plugin}{9}{subsection.5.1.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.1.2}\rmfamily Android SDK}{9}{subsection.5.1.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.1.3}\rmfamily JSON}{9}{subsection.5.1.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.1.4}\rmfamily Android SQLite Database}{9}{subsection.5.1.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.2}\slshape Popis struktury programu pro Android}{10}{section.5.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {6}\bfseries Zpracov\IeC {\'a}n\IeC {\'\i } formul\IeC {\'a}\IeC {\v r}\IeC {\r u}}{11}{chapter.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {7}\bfseries Design u\IeC {\v z}ivatelsk\IeC {\'e}ho rozhran\IeC {\'\i }}{12}{chapter.7}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {7.1}\slshape Ergonomie Softwaru}{12}{section.7.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {7.2}\slshape U\IeC {\v z}ivatelsk\IeC {\'e} rozhran\IeC {\'\i }}{12}{section.7.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {7.2.1}\rmfamily JurySettings}{12}{subsection.7.2.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {7.2.2}\rmfamily JuryActivity}{13}{subsection.7.2.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {7.2.3}\rmfamily MainActivity}{13}{subsection.7.2.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {7.2.4}\rmfamily Srovn\IeC {\'a}n\IeC {\'\i } podobnosti pap\IeC {\'\i }rov\IeC {\'e}ho formul\IeC {\'a}\IeC {\v r}e a elektronick\IeC {\'e}ho}{14}{subsection.7.2.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {8}\bfseries Java Server}{15}{chapter.8}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {8.1}\slshape Server Thread}{15}{section.8.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {8.2}\slshape Client Thread}{15}{section.8.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {8.3}\slshape Pr\IeC {\'a}ce se sockety}{15}{section.8.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {9}\bfseries Probl\IeC {\'e}my navr\IeC {\v z}en\IeC {\'e}ho \IeC {\v r}e\IeC {\v s}en\IeC {\'\i }}{16}{chapter.9}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {9.1}\slshape Zastaralost pravidel FIFE}{16}{section.9.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {10}\bfseries Google obchod Play - ne}{17}{chapter.10}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {11}\bfseries Z\IeC {\'a}v\IeC {\v e}r}{18}{chapter.11}
